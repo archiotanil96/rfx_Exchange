@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "rfx_Exchange:build:production"
+              "buildTarget": "rfx_Exchange:build:production"
             },
             "development": {
-              "browserTarget": "rfx_Exchange:build:development"
+              "buildTarget": "rfx_Exchange:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rfx_Exchange:build"
+            "buildTarget": "rfx_Exchange:build"
           }
         },
         "test": {
