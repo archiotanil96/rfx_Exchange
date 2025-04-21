@@ -1,18 +1,18 @@
-body{font-family: "Roboto", sans-serif;}
-.authentication-bg{background:#fff url(./../images/login_bg.png) no-repeat; background-size:contain;}
+body{font-family: 'National Park';}
+.authentication-bg{background:#fff  url('../../assets/login_bg.png') no-repeat; background-size:contain;}
 .well{text-align:center;background-color: #fff;border: 1px solid #E7EAF0;box-shadow: 0 1px 1px #ececec;-webkit-box-shadow: 0 1px 1px #ececec; -moz-box-shadow: 0 1px 1px #ececec;
 position:relative;padding:30px 30px 39px !important;border-radius: 6px !important;box-shadow: #e7eaf0 0 4px 12px;}
-.well h1{font-size: 20px; color: #0e0e0e;font-weight: 400;font-style: normal; font-family: "Roboto", sans-serif;}
-.well p{color: #0e0e0e;font-size: 17px;font-family: "Roboto", sans-serif;font-weight:300; font-style:normal;}
-.login-validation label{text-align:left;width:100%;color:#000;font-family: "Roboto", sans-serif;font-size:15px;font-weight:500;font-style:normal;}
+.well h1{font-size: 15px; color: #0e0e0e;font-weight:600;font-style: normal; font-family: 'National Park';}
+.well p{color: #0e0e0e;font-size: 17px;font-family: 'National Park';font-weight:500; font-style:normal;}
+.login-validation label{text-align:left;width:100%;color:#000;font-family: 'National Park';font-size:15px;font-weight:500;font-style:normal;}
 .red{color:#ff0000;}
-.well .form-control{color:#97a2b3 !important;height: 49px;background-color: #fff;font-family: "Roboto", sans-serif;font-weight: 400;font-style: normal;font-size:15px;border:1px solid #E7EAF0;}
+.well .form-control{color:#97a2b3 !important;height: 49px;background-color: #fff;font-family: 'National Park';font-weight: 400;font-style: normal;font-size:15px;border:1px solid #E7EAF0;}
 .well .form-control:hover, .well .form-control:focus{box-shadow:none !important; outline:none !important;}
 .form-control::placeholder{color:#ccc}
-.btn-login{background-color:#0075bf; padding-top:14px;padding-bottom:13px;font-family: "Roboto", sans-serif;text-transform: uppercase;font-weight:400;font-style:normal;width:100%;
+.btn-login{background-color:#0075bf; padding-top:14px;padding-bottom:13px;font-family: 'National Park';text-transform: uppercase;font-weight:400;font-style:normal;width:100%;
 font-size:16px;transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out; border-radius:5px;color:#fff;}
 .btn-login:hover{background-color:#0075bf; color:#fff;}
-.forgot a{color:#98a6ad;font-size: 14px;text-align: right;font-family: "Roboto", sans-serif;font-weight: 400;font-style:normal;text-decoration:none;padding:5px 0 25px;}
-.signtxt p{color:#0e0e0e !important; font-size: 14px !important;font-family: "Roboto", sans-serif;font-weight:400;font-style:normal;}
+.forgot a{color:#98a6ad;font-size: 14px;text-align: right;font-family: 'National Park';font-weight: 400;font-style:normal;text-decoration:none;padding:5px 0 25px;}
+.signtxt p{color:#0e0e0e !important; font-size: 14px !important;font-family: 'National Park';font-weight:400;font-style:normal;}
 .signtxt p a{text-decoration:none;}
-.fpass{color: #0e0e0e !important;font-size:14px !important;font-family: "Roboto", sans-serif;font-weight:400 !important;font-style:normal;}
+.fpass{color: #0e0e0e !important;font-size:14px !important;font-family: 'National Park';font-weight:400 !important;font-style:normal;}
