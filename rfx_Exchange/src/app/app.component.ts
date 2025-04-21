@@ -1,11 +1,38 @@
-import { Component } from '@angular/core';
+import { Router,ActivatedRoute } from '@angular/router';
+import { HostListener, OnInit, AfterViewInit ,AfterContentInit, ElementRef, Component} from '@angular/core';
+import { AuthenticationService } from './services/authServices/authentication.service';
+import { User } from './models/user-validate';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-
+  templateUrl: 'app.component.html' 
 })
-export class AppComponent {
-  title = 'rfx_Exchange';
+
+export class AppComponent implements OnInit,AfterViewInit  {
+
+  currentUser:any = User;
+
+  constructor(
+    private router: Router,
+    private authenticationService: AuthenticationService
+    ) {
+        this.authenticationService.currentUser.subscribe(x => 
+          this.currentUser = 
+          console.log("currentUser",this.currentUser));
+    }
+
+  ngAfterViewInit(): void {
+    console.log('HByei');
+  }
+  ngOnInit(): void {
+    console.log('Hi');
+  }
+
+  logout() {
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
 }
+
+}
+
+

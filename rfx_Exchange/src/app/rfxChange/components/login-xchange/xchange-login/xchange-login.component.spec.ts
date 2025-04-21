@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoginXChangeComponent } from './login-xchange.component';
+import { XchangeLoginComponent } from './xchange-login.component';
 
-describe('LoginXChangeComponent', () => {
-  let component: LoginXChangeComponent;
-  let fixture: ComponentFixture<LoginXChangeComponent>;
+describe('XchangeLoginComponent', () => {
+  let component: XchangeLoginComponent;
+  let fixture: ComponentFixture<XchangeLoginComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LoginXChangeComponent]
+      imports: [XchangeLoginComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LoginXChangeComponent);
+    fixture = TestBed.createComponent(XchangeLoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
