@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs';
+import { XchangeLoginRoutingModule } from './xchange-login-routing.module';
 import { AuthenticationService } from 'src/app/services/authServices/authentication.service';
 
 @Component({
   selector: 'app-xchange-login',
   standalone: true,
-  imports: [],
+  imports: [XchangeLoginRoutingModule],
   templateUrl: './xchange-login.component.html',
   styleUrl: './xchange-login.component.css'
 })
