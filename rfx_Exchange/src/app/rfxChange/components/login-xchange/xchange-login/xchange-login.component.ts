@@ -26,13 +26,13 @@ export class XchangeLoginComponent implements OnInit {
       private router: Router,
       private authenticationService: AuthenticationService
   ) {   
-      // redirect to home if already logged in
       if (this.authenticationService.currentUserValue) { 
           this.router.navigate(['/']);
       }
   }
 
   ngOnInit(): void {
+    console.log('inside login');
       this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]

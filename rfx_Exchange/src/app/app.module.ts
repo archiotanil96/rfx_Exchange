@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient , HTTP_INTERCEPTORS } from '@angular/common/http';
 import { fakeBackendProvider } from './authenticators/dummy-backend';
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
+import { appRoutingModule } from './app.routing';
 import { ErrorInterceptor,BasicAuthInterceptor} from './authenticators';
 import { XchangeForgotPasswordComponent } from './rfxChange/components/login-xchange/xchange-forgot-password/xchange-forgot-password.component';
 import { XchangeLoginComponent } from './rfxChange/components/login-xchange/xchange-login/xchange-login.component';
@@ -13,7 +13,7 @@ import { XchangeLoginComponent } from './rfxChange/components/login-xchange/xcha
     imports: [
         BrowserModule,
         ReactiveFormsModule,
-        AppRoutingModule,
+        appRoutingModule,
         XchangeForgotPasswordComponent,
         XchangeLoginComponent
     ],

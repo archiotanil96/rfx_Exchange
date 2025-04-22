@@ -9,6 +9,9 @@ import { User } from './models/user-validate';
 })
 
 export class AppComponent implements OnInit,AfterViewInit  {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
 
   currentUser:any = User;
 
@@ -22,7 +25,7 @@ export class AppComponent implements OnInit,AfterViewInit  {
     }
 
   ngAfterViewInit(): void {
-    console.log('HByei');
+    console.log('Hy');
   }
   ngOnInit(): void {
     console.log('Hi');
