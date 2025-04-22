@@ -25,10 +25,10 @@ export class AppComponent implements OnInit,AfterViewInit  {
     }
 
   ngAfterViewInit(): void {
-    console.log('Hy');
+    console.log('Check2');
   }
   ngOnInit(): void {
-    console.log('Hi');
+    console.log('Check1');
   }
 
   logout() {
