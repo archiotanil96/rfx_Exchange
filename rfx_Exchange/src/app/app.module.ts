@@ -1,3 +1,6 @@
+import { provideEventPlugins } from "@taiga-ui/event-plugins";
+import { TuiRoot } from "@taiga-ui/core";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -8,6 +11,7 @@ import { appRoutingModule } from './app.routing';
 import { ErrorInterceptor,BasicAuthInterceptor} from './authenticators';
 import { XchangeForgotPasswordComponent } from './rfxChange/components/login-xchange/xchange-forgot-password/xchange-forgot-password.component';
 import { XchangeLoginComponent } from './rfxChange/components/login-xchange/xchange-login/xchange-login.component';
+import { XchangeLoginModule } from "./rfxChange/components/login-xchange/xchange-login/xchange-login.module";
 
 @NgModule({
     imports: [
@@ -15,7 +19,9 @@ import { XchangeLoginComponent } from './rfxChange/components/login-xchange/xcha
         ReactiveFormsModule,
         appRoutingModule,
         XchangeForgotPasswordComponent,
-        XchangeLoginComponent
+        XchangeLoginModule,
+        BrowserAnimationsModule,
+        TuiRoot
     ],
     declarations: [
         AppComponent,
@@ -24,7 +30,8 @@ import { XchangeLoginComponent } from './rfxChange/components/login-xchange/xcha
         provideHttpClient(),
         { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-        fakeBackendProvider
+        fakeBackendProvider,
+        provideEventPlugins()
     ],
     bootstrap: [AppComponent]
 })

@@ -3,15 +3,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs';
 import { XchangeLoginRoutingModule } from './xchange-login-routing.module';
-import { AuthenticationService } from 'src/app/services/authServices/authentication.service';
+import { AuthenticationService } from 'src/app/services/authServices';
+
 
 @Component({
   selector: 'app-xchange-login',
   standalone: true,
   imports: [XchangeLoginRoutingModule],
   templateUrl: './xchange-login.component.html',
-  styleUrl: './xchange-login.component.css'
+  styleUrl: './xchange-login.component.css',
 })
+
 export class XchangeLoginComponent implements OnInit {
 
     loginForm:FormGroup = new FormGroup({});
@@ -55,10 +57,10 @@ export class XchangeLoginComponent implements OnInit {
     this.authenticationService.login(this.f['username'].value, this.f['password'].value)
         .pipe(first())
         .subscribe({
-          next: data => {
+          next: (data: any) => {
               this.router.navigate([this.returnUrl]);
           },
-          error: error => {
+          error: (error: any) => {
               this.error = error;
               this.loading = false;
           }
