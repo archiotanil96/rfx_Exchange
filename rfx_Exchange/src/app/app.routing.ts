@@ -6,7 +6,7 @@ import { AuthGuard } from './authenticators';
 const routes: Routes = [
   { path: 'login', component: XchangeLoginComponent },
   { path: 'forgotPassword', component: XchangeForgotPasswordComponent,canActivate: [AuthGuard]},
-  { path: '**', redirectTo: '/login'}
+  // { path: '**', redirectTo: '/login'}
 ];
 
 

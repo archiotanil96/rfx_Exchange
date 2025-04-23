@@ -4,7 +4,7 @@
 			<div style="margin-top:90px;" class="row justify-content-sm-center h-100">
 				<div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9 well">
 					<img src="./assets/rfxchange_Logo.svg" class="mt-1 mb-4" height="100">
-							<form method="POST" class="login-validation" novalidate="" autocomplete="off">
+							<form class="login-validation" novalidate="" autocomplete="off">
 								<div class="mb-3">
 									<h1>Login</h1>
 									<label class="mb-2" for="email">Username <span class="red">*</span></label>
@@ -31,7 +31,7 @@
 								</div>
 
 								<div class="d-flex align-items-center w-100">
-									<button type="submit" class="btn btn-login">
+									<button (click)="onSubmit()" class="btn btn-login">
 										Login
 									</button>
 								</div>

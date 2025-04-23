@@ -8,6 +8,7 @@ import { appRoutingModule } from './app.routing';
 import { ErrorInterceptor,BasicAuthInterceptor} from './authenticators';
 import { XchangeForgotPasswordComponent } from './rfxChange/components/login-xchange/xchange-forgot-password/xchange-forgot-password.component';
 import { XchangeLoginComponent } from './rfxChange/components/login-xchange/xchange-login/xchange-login.component';
+import { XchangeDashboardComponent } from './rfxChange/components/vrsMain/xchange-vrs-dashboard/xchange-dashboard/xchange-dashboard.component';
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import { XchangeLoginComponent } from './rfxChange/components/login-xchange/xcha
         ReactiveFormsModule,
         appRoutingModule,
         XchangeForgotPasswordComponent,
-        XchangeLoginComponent
+        XchangeLoginComponent,
+        XchangeDashboardComponent
     ],
     declarations: [
         AppComponent,

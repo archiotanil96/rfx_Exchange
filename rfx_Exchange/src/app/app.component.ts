@@ -2,6 +2,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 import { HostListener, OnInit, AfterViewInit ,AfterContentInit, ElementRef, Component} from '@angular/core';
 import { AuthenticationService } from './services/authServices/authentication.service';
 import { User } from './models/user-validate';
+import { XchangeDashboardComponent } from './rfxChange/components/vrsMain/xchange-vrs-dashboard/xchange-dashboard/xchange-dashboard.component';
 
 @Component({
   selector: 'app-root',
