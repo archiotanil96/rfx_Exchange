@@ -12,9 +12,8 @@ import { CommonModule } from '@angular/common';
 })
 
 export class XchangeNavigationStaticComponent implements OnInit{
-
   openSidebar: boolean = true;
-  menuSidebar = [{link_name:"Dashboard",link:"/dashboard",icon:"bx bx-grid-alt",sub_menu:[]},
+  menuSidebar = [{link_name:"Dashboard",link:"/dashboard",icon:"bx bx-dashboard",sub_menu:[]},
                  {link_name:"VRS",link:"/vrs_management",icon:"bx bx-collection",sub_menu:[
                   {link_name:"VRS Dashboard",link:"vrs_dashboard"},
                   {link_name:"Verification Events",link:"/verification_events"},
@@ -25,7 +24,7 @@ export class XchangeNavigationStaticComponent implements OnInit{
                   {link_name:"Push/Pull Records",link:"/push_pull_records"}]},
                  {link_name:"User Management",link:"/user_management",icon:"bx bx-book-alt",sub_menu:[]},
                  {link_name:"Enterprise Data",link:"/enterprise_data",icon:"bx bx-pie-chart-alt-2",sub_menu:[]},
-                 {link_name:"Conections Summary",link:"/conections_summary",icon:"bx bx-line-chart",sub_menu:[]},
+                 {link_name:"Connections Summary",link:"/conections_summary",icon:"bx bx-line-chart",sub_menu:[]},
                  {link_name:"Connection Setup",link:"/connection_setup",icon:"bx bx-plug",sub_menu:[]},
                  {link_name:"File Management",link:"/file_management",icon:"bx bx-compass",sub_menu:[]},
                  {link_name:"Certificate Management",link:"/certificate_management",icon:"bx bx-history",sub_menu:[]},

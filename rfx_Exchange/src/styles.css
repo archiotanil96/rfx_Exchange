@@ -18,4 +18,34 @@ font-size:16px;transition: color .15s ease-in-out, background-color .15s ease-in
 .signtxt p a{text-decoration:none;}
 .fpass{color: #0e0e0e !important;font-size:14px !important;font-family: 'National Park';font-weight:400 !important;font-style:normal;float:left}
 
+/*sidenav*/
+.sidebar{position:fixed;top:0;left:0;height:100%;overflow:auto;width:20%;background:white;z-index:100;transition:all 0.5s ease;box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;}
+.sidebar::-webkit-scrollbar{display:none;}
+.sidebar.sidebar-close{width:10%;}
+/*sidenav logo*/
+.sidebar .logo-details{margin-left:auto;margin-right:auto;display:block;width:fit-content!important;padding:20px 10px 10px 10px;}
+.sidebar .logo-details .logo img{height:70px;width:70px;margin-left:auto;margin-right:auto;display:block;}
+.sidebar .logo-details .logo{height:90px;width:100%;}
+.sidebar.sidebar-close .logo-details .logo{border-radius:3px;}
+/*sidenav links*/
+.sidebar .nav-links{height:50vh;width:100%;padding-bottom:150px;margin-left:-3em;}
+.sidebar .nav-links::-webkit-scrollbar{display:none;}
+.sidebar .nav-links li{list-style:none;}
+.sidebar .nav-links>li{position:relative;width:fit-content;}
+.sidebar .nav-links li:hover{background-color: #e0efff;border-top-right-radius: 10px;border-bottom-right-radius: 10px;}
+.sidebar .nav-links li:active{background-color:#e0efff;}
+.sidebar .nav-links li a .link_name{font-size:14px;font-weight:600;color:#555;transition:.4s}
+/*sidenav links icon*/
+.sidebar .nav-links li i{height:45px;margin-left:25px;min-width:45px;text-align:center;line-height:50px;color:#487cb2;font-size:20px;cursor:pointer;transition:.3s}
+/*sidenav submenu link*/
+.sidebar .nav-links li .sub-menu{padding:6px 6px 14px 70px;background:#fff;display:none;transition:.4s}
+.sidebar .nav-links li .sub-menu a{color:#555555;font-size:15px;font-family: 'National Park';font-weight:600;padding:7px 0;white-space:nowrap;transition:.3s}
+.sidebar .nav-links li .sub-menu li.active a,.sidebar .nav-links li .sub-menu li:hover a{color:#487cb2;}
+.sidebar .nav-links li .sub-menu .sub_menu_link_name {font-size:14px}
+/**userDetails*/
+.sidebar .user-details{height:40px;display:block;width:90%;padding:10px 10px 10px 20px;}
+.sidebar .user-details .logo{height:40px;width:100%;background-color:#2d69a7;border-radius:3px;}
+.sidebar.sidebar-close .user-details .logo{border-radius:3px;}
+
+
 

@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'vrs_management', component:XchangeVerificationEventsComponent},
   { path: 'user_management', component:XchangeUserManagementComponent},
   { path: 'enterprise_data', component:XchangeEnterpriseDataComponent},
-  { path: 'conections_summary', component:XchangeConnectionsSummaryComponent},
+  { path: 'connections_summary', component:XchangeConnectionsSummaryComponent},
   { path: 'connection_setup', component:XchangeConnectionSetupComponent},
   { path: 'file_management', component:XchangeFileManagementComponent},
   { path: 'certificate_management', component:XchangeCertificateManagementComponent},

@@ -1,5 +1,6 @@
 /* Hamburger Menu */
 .hamburger-menu {
+    border:solid 1px black;
     position: relative;
     width: 40px;
     height: 40px;
@@ -60,15 +61,12 @@
   /* Home Section */
   .home-section {
     position: relative;
-    background-image: radial-gradient(
-        circle farthest-corner at 7.2% 13.6%,
-        rgba(37, 249, 245, 1) 0%,
-        rgba(8, 70, 218, 1) 90%
-    );
+    background:#f4f5f9;
     /* background-image: radial-gradient(circle farthest-corner at 7.2% 13.6%, #25f9f5 0%, #0846da 90%); */
     height: 100vh;
     left: 260px;
-    width: calc(100% - 260px);
+    width: calc(100% - 100px);
+    border:solid 1px black;
     transition: all 0.5s ease;
     display: flex;
     flex-direction: column;
@@ -101,68 +99,7 @@
   }
   
   /* Sidebar */
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 260px;
-    background: white;
-    z-index: 100;
-    transition: all 0.5s ease;
-  }
-  
-  .sidebar.sidebar-close {
-    width: 60px;
-  }
-  
-  .sidebar .logo-details {
-    width: 100%;
-    padding: 20px 10px 10px 10px;
-  }
-  
-  /* .sidebar.sidebar-close .logo-details {
-    padding: 20px 10px;
-  } */
-  
-  .sidebar .logo-details .logo {
-    height: 40px;
-    width: 100%;
-    background-image: linear-gradient(to right, #ffa726, #ff5722);
-  }
-  
-  .sidebar.sidebar-close .logo-details .logo {
-    border-radius: 3px;
-  }
-  
-  .sidebar .nav-links {
-    height: 100%;
-    width: 260px;
-    padding-bottom: 150px;
-    overflow: auto;
-  }
-  
-  .sidebar .nav-links::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .sidebar .nav-links li {
-    list-style: none;
-  }
-  
-  .sidebar .nav-links > li {
-    position: relative;
-    width: fit-content;
-  }
-  
-  .sidebar .nav-links li:hover {
-    background: #ffa726;
-  }
-  
-  .sidebar .nav-links li.active {
-    background-image: linear-gradient(to right, #ffa726, #ff5722);
-  }
-  
+    
   /* Dropdown Title */
   .sidebar .nav-links .dropdown-title {
     width: 260px;
@@ -181,20 +118,9 @@
   
 
   
-  .sidebar .nav-links li i {
-    height: 50px;
-    min-width: 60px;
-    text-align: center;
-    line-height: 50px;
-    color: #ffa726;
-    font-size: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
   .sidebar .nav-links li:hover i, 
   .sidebar .nav-links li.active i {
-    color: white;
+    color: #487cb2;
   }
   
   .sidebar .nav-links li.showMenu i.arrow {
@@ -209,54 +135,30 @@
     width: 100%;
   }
   
-  /* Link Name */
-  .sidebar .nav-links li a .link_name {
-    font-size: 16px;
-    font-weight: 600;
-    color: #ffa726;
-    transition: all 0.4s ease;
-  }
   
   .sidebar .nav-links li:hover a .link_name, 
   .sidebar .nav-links li.active a .link_name {
-    color: white;
+    color: #487cb2;
   }
   
   .sidebar.sidebar-close .nav-links li a .link_name {
     pointer-events: none;
   }
   
-  /* Sub Menu */
-  .sidebar .nav-links li .sub-menu {
-    padding: 6px 6px 14px 70px;
-    /* margin-top: -10px; */
-    background: white;
-    display: none;
-    transition: all 0.4s ease;
-  }
   
   .sidebar .nav-links li.showMenu .sub-menu {
     display: block;
   }
-  
-  .sidebar .nav-links li .sub-menu a {
-    color: #ffa726;
-    font-size: 15px;
-    padding: 7px 0;
-    white-space: nowrap;
-    transition: all 0.3s ease;
-  }
+
   
   .sidebar .nav-links li .sub-menu li {
     padding-left: 10px;
   }
-  
 
-  
-  .sidebar .nav-links li .sub-menu li:hover a, 
-  .sidebar .nav-links li .sub-menu li.active a {
-    color: white;
+  .sidebar .nav-links li .sub-menu .link_name {
+   font-size:12px;
   }
+  
   
   .sidebar.sidebar-close .nav-links li .sub-menu {
     position: absolute;
@@ -284,13 +186,13 @@
     transition: all 0.4s ease;
   }
   
-  .sidebar .nav-links li .sub-menu .link_name {
-    display: none;
+  .sidebar .nav-links .sub-menu .link_name {
+   display: none;
   }
   
-  .sidebar.sidebar-close .nav-links li .sub-menu .link_name {
-    font-size: 16px;
-    font-weight: 600;
+  .sub-menu .li.link_name {
+    font-size: 10px!important;
+    font-weight: 300;
     /* opacity: 1; */
     display: block;
   }
@@ -331,4 +233,9 @@
         display: none;
     }
   }
+  
+
+
+
+
   
