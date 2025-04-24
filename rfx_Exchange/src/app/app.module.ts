@@ -8,12 +8,15 @@ import { appRoutingModule } from './app.routing';
 import { ErrorInterceptor,BasicAuthInterceptor} from './authenticators';
 import { XchangeForgotPasswordComponent } from './rfxChange/components/login-xchange/xchange-forgot-password/xchange-forgot-password.component';
 import { XchangeLoginComponent } from './rfxChange/components/login-xchange/xchange-login/xchange-login.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { XchangeNavigationComponent } from './shared/layout/navigation//xchange-navigation/xchange-navigation.component';
 
 @NgModule({
     imports: [
         BrowserModule,
         ReactiveFormsModule,
         appRoutingModule,
+        XchangeNavigationComponent,
         XchangeForgotPasswordComponent,
         XchangeLoginComponent
     ],
@@ -24,7 +27,8 @@ import { XchangeLoginComponent } from './rfxChange/components/login-xchange/xcha
         provideHttpClient(),
         { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-        fakeBackendProvider
+        fakeBackendProvider,
+        provideAnimationsAsync()
     ],
     bootstrap: [AppComponent]
 })

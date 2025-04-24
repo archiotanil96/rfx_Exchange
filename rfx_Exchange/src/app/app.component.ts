@@ -2,10 +2,11 @@ import { Router,ActivatedRoute } from '@angular/router';
 import { HostListener, OnInit, AfterViewInit ,AfterContentInit, ElementRef, Component} from '@angular/core';
 import { AuthenticationService } from './services/authServices/authentication.service';
 import { User } from './models/user-validate';
+import { XchangeNavigationComponent } from './shared/layout/navigation/xchange-navigation/xchange-navigation.component';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html' 
+  templateUrl: 'app.component.html' ,
 })
 
 export class AppComponent implements OnInit,AfterViewInit  {
