@@ -6,17 +6,15 @@ import { fakeBackendProvider } from './authenticators/dummy-backend';
 import { AppComponent } from './app.component';
 import { appRoutingModule } from './app.routing';
 import { ErrorInterceptor,BasicAuthInterceptor} from './authenticators';
-import { XchangeForgotPasswordComponent } from './rfxChange/components/login-xchange/xchange-forgot-password/xchange-forgot-password.component';
-import { XchangeLoginComponent } from './rfxChange/components/login-xchange/xchange-login/xchange-login.component';
+import { XchangeNavigationStaticModule } from "./shared/layout/navigation/xchange-navigation/xchange-navigation-static.module";
 
 @NgModule({
     imports: [
-        BrowserModule,
-        ReactiveFormsModule,
-        appRoutingModule,
-        XchangeForgotPasswordComponent,
-        XchangeLoginComponent
-    ],
+    BrowserModule,
+    ReactiveFormsModule,
+    appRoutingModule,
+    XchangeNavigationStaticModule
+],
     declarations: [
         AppComponent,
     ],

@@ -1,4 +1,4 @@
-body{font-family: 'National Park';}
+/* body{font-family: 'National Park';}
 .authentication-bg{background:#fff  url('./assets/login_bg.png') no-repeat; background-size:contain;}
 .well{text-align:center;background-color: #fff;border: 1px solid #E7EAF0;box-shadow: 0 1px 1px #ececec;-webkit-box-shadow: 0 1px 1px #ececec; -moz-box-shadow: 0 1px 1px #ececec;
 position:relative;padding:30px 30px 39px !important;border-radius: 6px !important;box-shadow: #e7eaf0 0 4px 12px;}
@@ -17,5 +17,5 @@ font-size:16px;transition: color .15s ease-in-out, background-color .15s ease-in
 .signtxt p{color:#0e0e0e !important; font-size: 14px !important;font-family: 'National Park';font-weight:400;font-style:normal;}
 .signtxt p a{text-decoration:none;}
 .fpass{color: #0e0e0e !important;font-size:14px !important;font-family: 'National Park';font-weight:400 !important;font-style:normal;float:left}
-/****** authentication-bg ends*****/
 
+ */
