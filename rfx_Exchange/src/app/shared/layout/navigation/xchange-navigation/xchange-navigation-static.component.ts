@@ -13,9 +13,9 @@ import { CommonModule } from '@angular/common';
 
 export class XchangeNavigationStaticComponent implements OnInit{
   openSidebar: boolean = true;
-  menuSidebar = [{link_name:"Dashboard",link:"/dashboard",icon:"bx bx-dashboard",sub_menu:[]},
+  menuSidebar = [{link_name:"Dashboard",link:"/dashboard",icon:"bx bxs-dashboard",sub_menu:[]},
                  {link_name:"VRS",link:"/vrs_management",icon:"bx bx-collection",sub_menu:[
-                  {link_name:"VRS Dashboard",link:"vrs_dashboard"},
+                  {link_name:"VRS Dashboard",link:"vrs_dashboard",icon:"bx bx-collection"},
                   {link_name:"Verification Events",link:"/verification_events"},
                   {link_name:"VRS Partners",link:"/vrs_partners"},
                   {link_name:"Records Management",link:"/records_management"},

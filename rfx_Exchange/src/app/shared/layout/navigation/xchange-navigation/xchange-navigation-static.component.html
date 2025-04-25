@@ -8,7 +8,7 @@
         <li *ngFor="let item of menuSidebar" #itemEl routerLinkActive="active">
             <div *ngIf="item.sub_menu.length == 0" class="dropdown-title">
                 <a [routerLink]="[item.link]">
-                    <i [class]="[item.icon]"></i>
+                    <i [class]="item.icon"></i>
                     <span class="link_name">{{item.link_name}}</span>
                 </a>
             </div>
@@ -28,7 +28,15 @@
         </li>
         <div class="user-details">
             <div class="logo">
-                
+                <!-- <img src="./assets/rfxchange_Logo.svg"> -->
+            </div>
+            <div class="bioData">
+                Lawrence Smith
+                <br>
+                lawrene_rfxcel.com
+            </div>
+            <div class="settings">
+                <i class="fa-solid fa-ellipsis"></i>
             </div>
         </div>
     </ul>

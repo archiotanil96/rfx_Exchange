@@ -21,9 +21,9 @@ font-size:16px;transition: color .15s ease-in-out, background-color .15s ease-in
 /*sidenav*/
 .sidebar{position:fixed;top:0;left:0;height:100%;overflow:auto;width:20%;background:white;z-index:100;transition:all 0.5s ease;box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;}
 .sidebar::-webkit-scrollbar{display:none;}
-.sidebar.sidebar-close{width:10%;}
+.sidebar.sidebar-close{width:15%;}
 /*sidenav logo*/
-.sidebar .logo-details{margin-left:auto;margin-right:auto;display:block;width:fit-content!important;padding:20px 10px 10px 10px;}
+.sidebar .logo-details{margin-left:auto;margin-right:auto;display:block;width:fit-content!important;padding:10px 10px 10px 10px;}
 .sidebar .logo-details .logo img{height:70px;width:70px;margin-left:auto;margin-right:auto;display:block;}
 .sidebar .logo-details .logo{height:90px;width:100%;}
 .sidebar.sidebar-close .logo-details .logo{border-radius:3px;}
@@ -34,17 +34,20 @@ font-size:16px;transition: color .15s ease-in-out, background-color .15s ease-in
 .sidebar .nav-links>li{position:relative;width:fit-content;}
 .sidebar .nav-links li:hover{background-color: #e0efff;border-top-right-radius: 10px;border-bottom-right-radius: 10px;}
 .sidebar .nav-links li:active{background-color:#e0efff;}
-.sidebar .nav-links li a .link_name{font-size:14px;font-weight:600;color:#555;transition:.4s}
+.sidebar .nav-links li a .link_name{font-size:14px;font-weight:600;color:#555;transition:.4s;padding:10px 10px 4px 0px;}
 /*sidenav links icon*/
-.sidebar .nav-links li i{height:45px;margin-left:25px;min-width:45px;text-align:center;line-height:50px;color:#487cb2;font-size:20px;cursor:pointer;transition:.3s}
+.sidebar .nav-links li i{height:45px;margin-left:25px;min-width:45px;text-align:center;line-height:50px;color:#555555;font-size:20px;cursor:pointer;transition:.3s}
 /*sidenav submenu link*/
-.sidebar .nav-links li .sub-menu{padding:6px 6px 14px 70px;background:#fff;display:none;transition:.4s}
+.sidebar .nav-links li .sub-menu{padding:6px 6px 14px 60px;background:#fff;display:none;transition:.4s}
 .sidebar .nav-links li .sub-menu a{color:#555555;font-size:15px;font-family: 'National Park';font-weight:600;padding:7px 0;white-space:nowrap;transition:.3s}
 .sidebar .nav-links li .sub-menu li.active a,.sidebar .nav-links li .sub-menu li:hover a{color:#487cb2;}
 .sidebar .nav-links li .sub-menu .sub_menu_link_name {font-size:14px}
 /**userDetails*/
-.sidebar .user-details{height:40px;display:block;width:90%;padding:10px 10px 10px 20px;}
-.sidebar .user-details .logo{height:40px;width:100%;background-color:#2d69a7;border-radius:3px;}
+.sidebar .user-details{border-radius:5px;box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;display: flex;height:40px;width:90%;margin-left:20px;padding:1px 0px 10px 0px;background-color:#487cb2;}
+.sidebar .user-details .logo{height:40px;width:30%;}
+.sidebar .user-details .logo img{height:50px;width:70%;margin-left:auto;margin-right:auto;display: block;}
+.sidebar .user-details .bioData{color:#e0e0e0;height:40px;width:60%;font-family: 'National Park';font-size:13px;font-weight:600;padding:8px 0px 0px 0px;}
+.sidebar .user-details .settings{height:40px;width:10%; transform: scale(1,1);}
 .sidebar.sidebar-close .user-details .logo{border-radius:3px;}
 
 
