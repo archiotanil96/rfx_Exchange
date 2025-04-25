@@ -21,7 +21,7 @@ font-size:16px;transition: color .15s ease-in-out, background-color .15s ease-in
 /*sidenav*/
 .sidebar{position:fixed;top:0;left:0;height:100%;overflow:auto;width:20%;background:white;z-index:100;transition:all 0.5s ease;box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;}
 .sidebar::-webkit-scrollbar{display:none;}
-.sidebar.sidebar-close{width:15%;}
+.sidebar.sidebar-close{width:7%;}
 /*sidenav logo*/
 .sidebar .logo-details{margin-left:auto;margin-right:auto;display:block;width:fit-content!important;padding:10px 10px 10px 10px;}
 .sidebar .logo-details .logo img{height:70px;width:70px;margin-left:auto;margin-right:auto;display:block;}
