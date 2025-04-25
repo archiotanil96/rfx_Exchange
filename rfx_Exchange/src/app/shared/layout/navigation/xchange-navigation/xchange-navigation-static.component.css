@@ -63,9 +63,10 @@
     position: relative;
     background:#f4f5f9;
     /* background-image: radial-gradient(circle farthest-corner at 7.2% 13.6%, #25f9f5 0%, #0846da 90%); */
-    height: 100vh;
-    left: 260px;
-    width: calc(100% - 100px);
+    height: 90vh;
+    left: 265px;
+    width: 80%;
+    margin-top: -1px !important;
     border:solid 1px black;
     transition: all 0.5s ease;
     display: flex;
@@ -224,8 +225,8 @@
   }
   
   .sidebar.sidebar-close ~ .home-section {
-    left: 60px;
-    width: calc(100% - 60px);
+    left: 200px;
+    width:calc(92% - 100px);
   }
   
   @media (max-width: 420px) {
