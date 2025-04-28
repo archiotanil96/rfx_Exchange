@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community'; 
+ModuleRegistry.registerModules([AllCommunityModule]);
 import { XchangeVerificationEventsRoutingModule } from './xchange-verification-events-routing.module';
 
 

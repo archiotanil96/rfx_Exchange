@@ -8,6 +8,7 @@ import { appRoutingModule } from './app.routing';
 import { ErrorInterceptor,BasicAuthInterceptor} from './authenticators';
 import { XchangeLoginComponent } from "./rfxChange/components/login-xchange/xchange-login/xchange-login.component";
 import { XchangeNavigationStaticComponent } from "./shared/layout/navigation/xchange-navigation/xchange-navigation-static.component";
+import { XchangeVerificationEventsModule } from './rfxChange/components/xchange-vrs-main/xchange-verification-events/xchange-verification-events.module';
 
 @NgModule({
     imports: [
@@ -15,6 +16,7 @@ import { XchangeNavigationStaticComponent } from "./shared/layout/navigation/xch
     ReactiveFormsModule,
     appRoutingModule,
     XchangeLoginComponent,
+    XchangeVerificationEventsModule,
     XchangeNavigationStaticComponent
 ],
     declarations: [

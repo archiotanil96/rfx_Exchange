@@ -1,1 +1,10 @@
-<p>xchange-verification-events works!</p>
+
+<div class="home-attributes">
+    <div class="exportData">
+        <button id="#filterVrsExport" style="margin:8px;font-family:'National Park';color:#f2f5f9;border:0px;border-radius:3px;background-color:#2d69a7;" type="button" class="btn btn-primary">Export<span><i class="fa fa-file-export"></i></span></button>
+       </div>
+    <div class="filterData">
+        <button id="filterVrsDetails" (click)="verificationEventFilter()" class="btn btn-primary">Filter<span><i class="fa fa-filter"></i></span></button>
+    </div>
+</div>
+<ag-grid-angular id="verificationEventGrid"  pagination  [gridOptions]="gridOptions" [rowStyle]="rowStyle"/>

@@ -1,4 +1,4 @@
-body{font-family: 'National Park';}
+body{font-family: 'National Park';background-color:#e0e0e0;}
 .authentication-bg{background:#fff  url('./assets/login_bg.png') no-repeat; background-size:contain;}
 .well{text-align:center;background-color: #fff;border: 1px solid #E7EAF0;box-shadow: 0 1px 1px #ececec;-webkit-box-shadow: 0 1px 1px #ececec; -moz-box-shadow: 0 1px 1px #ececec;
 position:relative;padding:30px 30px 39px !important;border-radius: 6px !important;box-shadow: #e7eaf0 0 4px 12px;}
@@ -16,39 +16,93 @@ font-size:16px;transition: color .15s ease-in-out, background-color .15s ease-in
 .forgot a{color:#268dc0;font-size: 14px;text-align: right;font-family: 'National Park';font-weight: 400;font-style:normal;text-decoration:none;padding:5px 0 25px;border:0px !important;background: none;}
 .signtxt p{color:#0e0e0e !important; font-size: 14px !important;font-family: 'National Park';font-weight:400;font-style:normal;}
 .signtxt p a{text-decoration:none;}
-.fpass{color: #0e0e0e !important;font-size:14px !important;font-family: 'National Park';font-weight:400 !important;font-style:normal;float:left}
+.fpass{color: #0e0e0e !important;font-size:12px !important;font-family: 'National Park';font-weight:400 !important;font-style:normal;float:left}
 
 /*sidenav*/
-.sidebar{position:fixed;top:0;left:0;height:100%;overflow:auto;width:20%;background:white;z-index:100;transition:all 0.5s ease;box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;}
+.sidebar{position:fixed;top:0;left:0;height:100%;overflow:auto;width:21.5%;background:white;z-index:100;transition:all 0.5s ease;box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;}
 .sidebar::-webkit-scrollbar{display:none;}
-.sidebar.sidebar-close{width:7%;}
+.sidebar.sidebar-close{width:10%;}
+
+
 /*sidenav logo*/
-.sidebar .logo-details{margin-left:auto;margin-right:auto;display:block;width:fit-content!important;padding:10px 10px 10px 10px;}
+.sidebar .logo-details{margin-left:auto;margin-right:auto;height:5em;display:block;width:fit-content!important;padding:10px 10px 10px 10px;}
 .sidebar .logo-details .logo img{height:70px;width:70px;margin-left:auto;margin-right:auto;display:block;}
 .sidebar .logo-details .logo{height:90px;width:100%;}
 .sidebar.sidebar-close .logo-details .logo{border-radius:3px;}
+
+
 /*sidenav links*/
-.sidebar .nav-links{height:50vh;width:100%;padding-bottom:150px;margin-left:-3em;}
+.sidebar .nav-links{height:72vh;top:0;width:90%;padding:0px !important;margin-left:12px;overflow-y: auto;}
 .sidebar .nav-links::-webkit-scrollbar{display:none;}
 .sidebar .nav-links li{list-style:none;}
 .sidebar .nav-links>li{position:relative;width:fit-content;}
-.sidebar .nav-links li:hover{background-color: #e0efff;border-top-right-radius: 10px;border-bottom-right-radius: 10px;}
+.sidebar .nav-links li:hover{background-color: #e0efff;border-radius:5px;}
 .sidebar .nav-links li:active{background-color:#e0efff;}
-.sidebar .nav-links li a .link_name{font-size:14px;font-weight:600;color:#555;transition:.4s;padding:10px 10px 4px 0px;}
+.sidebar .nav-links li a .link_name{font-size:12px;font-weight:600;color:#555;transition:.4s;padding:10px 10px 4px 0px;}
+
+
 /*sidenav links icon*/
-.sidebar .nav-links li i{height:45px;margin-left:25px;min-width:45px;text-align:center;line-height:50px;color:#555555;font-size:20px;cursor:pointer;transition:.3s}
+.sidebar .nav-links li i{height:45px;min-width:45px;text-align:center;line-height:50px;color:#555555;font-size:12px;cursor:pointer;transition:.3s}
+.sidebar .nav-links li:hover i,.sidebar .nav-links li.active i{color:#487cb2}
+.sidebar .nav-links li.showMenu i.arrow {transform: rotate(-180deg);} 
+
+
 /*sidenav submenu link*/
-.sidebar .nav-links li .sub-menu{padding:6px 6px 14px 60px;background:#fff;display:none;transition:.4s}
-.sidebar .nav-links li .sub-menu a{color:#555555;font-size:15px;font-family: 'National Park';font-weight:600;padding:7px 0;white-space:nowrap;transition:.3s}
+.sidebar .nav-links li .sub-menu{padding:6px 6px 14px 34px;background:#fff;display:none;transition:.4s}
+.sidebar .nav-links li .sub-menu a{color:#555555;font-size:12px;font-family: 'National Park';font-weight:600;padding:7px 0;white-space:nowrap;transition:.3s}
 .sidebar .nav-links li .sub-menu li.active a,.sidebar .nav-links li .sub-menu li:hover a{color:#487cb2;}
-.sidebar .nav-links li .sub-menu .sub_menu_link_name {font-size:14px}
+.sidebar .nav-links li .sub-menu .sub_menu_link_name {font-size:12px}
+
+
 /**userDetails*/
-.sidebar .user-details{border-radius:5px;box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;display: flex;height:40px;width:90%;margin-left:20px;padding:1px 0px 10px 0px;background-color:#487cb2;}
+.sidebar .user-details{border-radius:5px;box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;display: flex;height:40px;width:90%;margin:10px 20px 0px 13px;padding:0px 0px 10px 0px;background-color:#487cb2;}
 .sidebar .user-details .logo{height:40px;width:30%;}
 .sidebar .user-details .logo img{height:50px;width:70%;margin-left:auto;margin-right:auto;display: block;}
-.sidebar .user-details .bioData{color:#e0e0e0;height:40px;width:60%;font-family: 'National Park';font-size:13px;font-weight:600;padding:8px 0px 0px 0px;}
+.sidebar .user-details .bioData{color:#e0e0e0;height:40px;width:60%;font-family: 'National Park';font-size:12px;font-weight:600;padding:8px 0px 0px 0px;}
 .sidebar .user-details .settings{height:40px;width:10%; transform: scale(1,1);}
 .sidebar.sidebar-close .user-details .logo{border-radius:3px;}
+
+
+/**sidebar nav links**/
+.sidebar .nav-links li:hover a .link_name,.sidebar .nav-links li.active a .link_name{color:#487cb2}
+.sidebar.sidebar-close .nav-links li a .link_name{pointer-events:none}
+.sidebar .nav-links .dropdown-title{width:260px;overflow:hidden;transition:all 0.52s ease;display:flex;align-items:center;justify-content:space-between;position:relative}
+.sidebar.sidebar-close .nav-links .dropdown-title{width:60%}
+.sidebar .nav-links li a{display:flex;align-items:center;text-decoration:none;width:100%}
+.sidebar .nav-links li.showMenu .sub-menu{display:block}
+.sidebar .nav-links li .sub-menu li{padding-left:10px}
+.sidebar .nav-links li .sub-menu .link_name{font-size:12px}
+.sidebar.sidebar-close .nav-links li .sub-menu{position:absolute;left:100%;top:-10px;margin-top:0;padding:0;border-radius:0 6px 6px 0;opacity:0;display:block;pointer-events:none;transition:0s;overflow:hidden}
+.sidebar.sidebar-close .nav-links li .sub-menu li{width:200px}
+.sidebar.sidebar-close .nav-links li:hover .sub-menu{top:0;opacity:1;pointer-events:auto;transition:all 0.4s ease}
+.sidebar .nav-links .sub-menu .link_name{display:none}
+.sub-menu .li.link_name{font-size:12px!important;font-weight:300;display:block}
+.sidebar.sidebar-close .nav-links li .sub-menu li:first-child{background:#fff;pointer-events:none}
+.sidebar.sidebar-close .nav-links li .sub-menu li:first-child:hover .link_name,
+.sidebar.sidebar-close .nav-links li .sub-menu li:first-child.active .link_name{color:#ffa726}
+.sidebar .nav-links li .sub-menu.blank{pointer-events:auto;opacity:0;pointer-events:none}
+.sidebar .nav-links li:hover .sub-menu.blank,
+.sidebar .nav-links li.active .sub-menu.blank{top:50%;transform:translateY(-50%)}
+.sidebar.sidebar-close~.home-section{left:150px;width:calc(92% - 100px)}
+
+/**home section**/
+.home-section{position:relative;height:95vh;left:300px;width:77.5%;transition:all 0.5s ease;display:flex;flex-direction:column;background-color:#e0e0e0;}
+.home-section .home-header{height:80px;display:flex;align-items:center}
+.home-section .home-header .title{color:#555;font-size:20px;font-weight:700!important}
+.home-section .home-view .home-container{height:85vh;background-color:#fff}
+.home-attributes{width:100%;height:6vh; display: flex;}
+.home-attributes .exportData,.filterData{width:50%;}
+.home-attributes .filterData #filterVrsDetails {float:right;margin:8px;font-family:'National Park';background-color:#e0e0e0;color:#8b8b8b;border: 0px !important;border-radius:3px;}
+#filterVrsExport {margin:8px;font-family:'National Park';}
+
+/*** ag grid styles***/
+#verificationEventGrid{width: 100%; height: 80vh;}
+.id-header .ag-header-cell-text {font-family:'National Park';color:#555;font-weight:600;font-size:12px;border-radius:0px !important}
+.vrs-exchange-row-class {font-family:'National Park'}
+
+/**media rule**/
+@media(max-width:420px){.sidebar.sidebar-close .nav-links li .sub-menu{display:none}}
+@media only screen and (max-width:600px){.sidebar{display:none}}
 
 
 

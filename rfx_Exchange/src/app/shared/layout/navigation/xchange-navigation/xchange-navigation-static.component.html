@@ -26,36 +26,29 @@
                 </li>
             </ul>
         </li>
-        <div class="user-details">
-            <div class="logo">
-                <!-- <img src="./assets/rfxchange_Logo.svg"> -->
-            </div>
-            <div class="bioData">
-                Lawrence Smith
-                <br>
-                lawrene_rfxcel.com
-            </div>
-            <div class="settings">
-                <i class="fa-solid fa-ellipsis"></i>
-            </div>
-        </div>
     </ul>
+    <div class="user-details">
+        <div class="logo">
+            <!-- <img src="./assets/rfxchange_Logo.svg"> -->
+        </div>
+        <div class="bioData">
+            Lawrence Smith
+            <br>
+            lawrene_rfxcel.com
+        </div>
+        <div class="settings">
+            <i class="fa-solid fa-ellipsis"></i>
+        </div>
+    </div>
 </div>
 
 <section class="home-section">
     <div class="home-header">
-        <div class="hamburger-menu">
-            <input type="checkbox" id="checkbox-hamburger-menu" [(ngModel)]="openSidebar" />
-            <label class="label-hamburger-menu" for="checkbox-hamburger-menu">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </label>
-        </div>
-        <div class="title">Header</div>
+        <div class="title">Verification Details</div>
     </div>
     <div class="home-view">
-        <router-outlet></router-outlet>
-        This is a project for Dropdown Sidebar
+        <div class="home-container">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </section>
