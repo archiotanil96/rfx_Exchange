@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AgGridAngular } from "ag-grid-angular";
-import type { ColDef, GridOptions } from "ag-grid-community";
+import { ColDef, GridOptions,Theme,themeMaterial } from "ag-grid-community";
 import { AllCommunityModule, ModuleRegistry } from "ag-grid-community";
 import { Router } from '@angular/router';
 import { XchangeVerificationDetailsFilterComponent } from 'src/app/rfxChange/model/xchange_filter_modal/xchange_verification_details/xchange-verification-details-filter/xchange-verification-details-filter.component';
 import { fontFamilyValueToCss } from 'ag-grid-community/dist/types/src/theming/theme-types';
+import { XchangeVrsVerificationEventsStatusModalModule } from 'src/app/rfxChange/modals/xchange-vrs-verification-events-status-modal/xchange-vrs-verification-events-status-modal.module';
+import { XchangeVrsVerificationEventsStatusModalComponent } from 'src/app/rfxChange/modals/xchange-vrs-verification-events-status-modal/xchange-vrs-verification-events-status-modal.component';
+import { XchangeVrsRecordsManagementComponent } from "../xchange-vrs-records-management/xchange-vrs-records-management.component";
+import { XchangeVrsRecordsManagementModalComponent } from "../../../modals/xchange-vrs-records-management-modal/xchange-vrs-records-management-modal/xchange-vrs-records-management-modal.component";
 
 ModuleRegistry.registerModules([AllCommunityModule]);
 interface IRow {
@@ -22,11 +26,13 @@ interface IRow {
   Requested:string,
   View:String
 
-}
+}4
+
+
 @Component({
   selector: 'app-xchange-verification-events',
   standalone: true,
-  imports: [AgGridAngular],
+  imports: [AgGridAngular, XchangeVrsRecordsManagementComponent, XchangeVrsVerificationEventsStatusModalComponent, XchangeVrsRecordsManagementModalComponent],
   templateUrl: './xchange-verification-events.component.html',
   styleUrl: './xchange-verification-events.component.css'
 })
@@ -37,7 +43,7 @@ export class XchangeVerificationEventsComponent implements OnInit{
 
   gridOptions: GridOptions = {
     columnDefs: [
-      {field:"ID",headerName: 'ID',headerClass:"id-header"},{field:"Requestor_GLN",headerClass:"id-header",headerName: 'Requestor GLN'},{field:"Responder_GLN",headerName: 'Responder GLN',headerClass:"id-header"},{field:"Requestor_VRS_Provider",headerName:'Requestor VRS Provider',headerClass:"id-header"},{field:"Responder_VRS_Provider",headerName:"Responder VRS Provider",headerClass:"id-header"},{field:"GTIN",headerClass:"id-header"},{field:"Serial_Number",headerName:'Serial Number',headerClass:"id-header"},{field:"Batch_LOT",headerName:"Batch/LOT",headerClass:"id-header"},{field:"Expiration_Date",headerName:"Expiration Date",headerClass:"id-header"},{field:"Status",headerClass:"id-header"},{field:"Download",headerClass:"id-header"},{field:"Requested",headerClass:"id-header"},{field:"View",headerName:"",headerClass:"id-header"}
+      {field:"ID",headerName: 'ID',headerClass:"id-header", width:100},{field:"Requestor_GLN",headerClass:"id-header",headerName: 'Requestor GLN',width:138},{field:"Responder_GLN",headerName: 'Responder GLN',headerClass:"id-header",width:138},{field:"Requestor_VRS_Provider",headerName:'Requestor VRS Provider',headerClass:"id-header",width:180},{field:"Responder_VRS_Provider",headerName:"Responder VRS Provider",headerClass:"id-header",width:190},{field:"GTIN",headerClass:"id-header",width:150},{field:"Serial_Number",headerName:'Serial Number',headerClass:"id-header",width:130},{field:"Batch_LOT",headerName:"Batch/LOT",headerClass:"id-header",width:130},{field:"Expiration_Date",headerName:"Expiration Date",headerClass:"id-header",width:150},{field:"Status",headerClass:"id-header",width:130},{field:"Download",headerClass:"id-header",width:130},{field:"Requested",headerClass:"id-header"},{field:"View",headerName:"",headerClass:"id-header",width:100}
     ],
     rowData: [
       { ID: "1", Requestor_GLN: "0422012345678", Responder_GLN: 1634509800123, Requestor_VRS_Provider: 'TraceLink', Responder_VRS_Provider: 'RFXCel', GTIN: '0523012345680', Serial_Number: '703219', Batch_LOT: "3012456F", Expiration_Date: "14-09-2026", Status: "Pending", Download: "", Requested: "04-28-2025 / 11:52:AM", View: "View" },
@@ -85,11 +91,24 @@ export class XchangeVerificationEventsComponent implements OnInit{
     suppressRowHoverHighlight: true,
     columnHoverHighlight:true,
   };
+
+  myTheme = themeMaterial.withParams({
+    fontFamily: "National Park",
+    headerFontFamily: "Brush Script MT",
+    cellFontFamily: "monospace",
+    fontSize:12,
+    textColor:'#555'
+    
+  });
+
+  theme: Theme | "legacy" = this.myTheme;
   
 
   ngOnInit(): void {
     console.log("event")
+    
   }
+
 
   verificationEventFilter()
   {

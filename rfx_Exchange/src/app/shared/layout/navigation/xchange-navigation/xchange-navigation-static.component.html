@@ -1,54 +1,50 @@
-<div class="sidebar" [class.sidebar-close]="!openSidebar">
-    <div class="logo-details">
-        <div class="logo">
-            <img src="./assets/rfxchange_Logo.svg">
-        </div>
-    </div>
-    <ul class="nav-links" id="nav-links">
-        <li *ngFor="let item of menuSidebar" #itemEl routerLinkActive="active">
-            <div *ngIf="item.sub_menu.length == 0" class="dropdown-title">
-                <a [routerLink]="[item.link]">
-                    <i [class]="item.icon"></i>
-                    <span class="link_name">{{item.link_name}}</span>
-                </a>
-            </div>
-            <div *ngIf="item.sub_menu.length > 0" class="dropdown-title" (click)="showSubmenu(itemEl)">
-                <a>
-                    <i [class]="item.icon"></i>
-                    <span class="link_name">{{item.link_name}}</span>
-                </a>
-                <i class='bx bxs-chevron-down arrow'></i>
-            </div>
-            <ul class="sub-menu" [class.blank]="item.sub_menu.length == 0">
-                <li><a class="link_name">{{item.link_name}}</a></li>
-                <li *ngFor="let item_sub of item.sub_menu" routerLinkActive="active">
-                    <a class="sub_menu_link_name" [routerLink]="[item_sub.link]">{{item_sub.link_name}}</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <div class="user-details">
-        <div class="logo">
-            <!-- <img src="./assets/rfxchange_Logo.svg"> -->
-        </div>
-        <div class="bioData">
-            Lawrence Smith
-            <br>
-            lawrene_rfxcel.com
-        </div>
-        <div class="settings">
-            <i class="fa-solid fa-ellipsis"></i>
-        </div>
-    </div>
-</div>
+<div class="sidenav">
+  <div class="logo">
+    <img src="./assets/rfxchange_Logo.svg" alt="rfxchange logo" />
+  </div>
 
-<section class="home-section">
-    <div class="home-header">
-        <div class="title">Verification Details</div>
+  <ul class="nav">
+    <li>
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <i class="fa fa-chart-line"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+
+    <li class="nav-group">
+      <div class="vrs-active" (click)="toggleVrsMenu()">
+        <i class="fa fa-project-diagram"></i>
+        <span class="label">VRS</span>
+        <i class="fa" [ngClass]="vrsExpanded ? 'fa-chevron-down' : 'fa-chevron-right'"></i>
+      </div>
+      <ul class="submenu" *ngIf="vrsExpanded">
+        <li><a routerLink="/vrs/dashboard" routerLinkActive="active">Dashboard</a></li>
+        <li><a routerLink="/vrs/verification-events" routerLinkActive="active">Verification Events</a></li>
+        <li><a routerLink="/vrs/partners" routerLinkActive="active">VRS Partners</a></li>
+        <li><a routerLink="/vrs/records-management" routerLinkActive="active">Records Management</a></li>
+        <li><a routerLink="/vrs/pull-records" routerLinkActive="active">Pull Records</a></li>
+        <li><a routerLink="/vrs/push-records" routerLinkActive="active">Push Records</a></li>
+        <li><a routerLink="/vrs/analytics" routerLinkActive="active">Push/Pull Analytics</a></li>
+      </ul>
+    </li>
+
+    <li><a routerLink="/user-management" routerLinkActive="active"><i class="fa fa-user-cog"></i><span>User Management</span></a></li>
+    <li><a routerLink="/enterprise-data" routerLinkActive="active"><i class="fa fa-database"></i><span>Enterprise Data</span></a></li>
+    <li><a routerLink="/connections-summary" routerLinkActive="active"><i class="fa fa-link"></i><span>Connections Summary</span></a></li>
+    <li><a routerLink="/connection-setup" routerLinkActive="active"><i class="fa fa-plug"></i><span>Connection Setup</span></a></li>
+    <li><a routerLink="/file-management" routerLinkActive="active"><i class="fa fa-file-alt"></i><span>File Management</span></a></li>
+    <li><a routerLink="/certificate-management" routerLinkActive="active"><i class="fa fa-certificate"></i><span>Certificate Management</span></a></li>
+    <li><a routerLink="/error-management" routerLinkActive="active"><i class="fa fa-exclamation-circle"></i><span>Error Management</span></a></li>
+    <li><a routerLink="/audit-page" routerLinkActive="active"><i class="fa fa-book"></i><span>Audit Page</span></a></li>
+    <li><a routerLink="/service-management" routerLinkActive="active"><i class="fa fa-tools"></i><span>Service Management</span></a></li>
+  </ul>
+
+  <div class="user-profile">
+    <img src="./assets/navigationIcons/archiot.jpg"  class="avatar" alt="User" />
+    <div class="user-info">
+      <p class="name">{{userName}}</p>
+      <p class="email">{{userEmail}}</p>
     </div>
-    <div class="home-view">
-        <div class="home-container">
-            <router-outlet></router-outlet>
-        </div>
-    </div>
-</section>
+    <i class="fa fa-ellipsis-v profile-ellipsis"></i>
+  </div>
+</div>

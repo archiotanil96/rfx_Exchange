@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-xchange-vrs-push-records',
@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
   templateUrl: './xchange-vrs-push-records.component.html',
   styleUrl: './xchange-vrs-push-records.component.css'
 })
-export class XchangeVrsPushRecordsComponent {
+export class XchangeVrsPushRecordsComponent implements OnInit{
+  
+  
+  ngOnInit(): void {
+    console.log("Hi")
+  }
 
 }

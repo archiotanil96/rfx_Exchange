@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { XchangeVrsPushPullAnalyticsRoutingModule } from '../xchange-vrs-push-pull-analytics/xchange-vrs-push-pull-analytics-routing.module';
-
+import { XchangeVrsPushRecordsModule } from './xchange-vrs-push-records.module';
 const routes: Routes = [
-  {path:'',component:XchangeVrsPushPullAnalyticsRoutingModule}
+  {path:'',component:XchangeVrsPushRecordsModule}
 ];
 
 @NgModule({
