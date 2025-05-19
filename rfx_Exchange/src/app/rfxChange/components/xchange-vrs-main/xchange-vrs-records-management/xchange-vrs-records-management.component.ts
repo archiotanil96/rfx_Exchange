@@ -1,81 +1,150 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy, ViewChild, ViewContainerRef, ViewEncapsulation  } from '@angular/core';
 import { Router } from '@angular/router';
-import { AgGridAngular } from "ag-grid-angular";
-import { ColDef, GridOptions,Theme,themeMaterial } from "ag-grid-community";
-import { AllCommunityModule, ModuleRegistry } from "ag-grid-community";
-import { XchangeVrsRecordsManagementModalComponent } from "../../../modals/xchange-vrs-records-management-modal/xchange-vrs-records-management-modal/xchange-vrs-records-management-modal.component";
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';  
+import {
+  CellStyleModule,
+  ClientSideRowModelModule,
+  ColDef,
+  ColGroupDef,
+  GridApi,
+  GridOptions,
+  ModuleRegistry,
+  ValidationModule,
+  createGrid,
+} from "ag-grid-community";
+import { XchangeVrsRecordsManagementFilterComponent } from "../../../module/xchange-records-management-filter-module/xchange-vrs-records-management-filter.component";
+import { XchangeVrsRecordsManagementModalComponent } from "../../../modals/xchange-vrs-records-management-modal/xchange-vrs-records-management-modal.component";
+import { Subscription } from 'rxjs';
+import { EventService } from 'src/app/services/authServices/closeModalService';
+
 
 @Component({
   selector: 'app-xchange-vrs-records-management',
   standalone: true,
-  imports: [AgGridAngular, XchangeVrsRecordsManagementModalComponent],
   templateUrl: './xchange-vrs-records-management.component.html',
-  styleUrl: './xchange-vrs-records-management.component.css'
+  styleUrl: './xchange-vrs-records-management.component.css',
+  encapsulation: ViewEncapsulation.None,
+  imports: [FormsModule,CommonModule, XchangeVrsRecordsManagementFilterComponent, XchangeVrsRecordsManagementModalComponent]
 })
 
 
-export class XchangeVrsRecordsManagementComponent implements OnInit{
-  constructor(private router: Router) {}
+export class XchangeVrsRecordsManagementComponent implements OnInit,OnDestroy{
+  @ViewChild('recordsFilterContainer', { read: ViewContainerRef }) container!: ViewContainerRef;
+  @ViewChild(XchangeVrsRecordsManagementModalComponent) modalComponent!: XchangeVrsRecordsManagementModalComponent; 
+  showFilter:boolean = false;
+  showModal:boolean  = false;  
+  isVisible:boolean  = true;
+  modalData: any;
+  message:any;
+  closeModalSubscription: Subscription | undefined;
+  parentRowData: any;
 
-  rowStyle = { fontFamilyValueToCss: 'blue' };
+  constructor(private router: Router,private eventService: EventService) {}
+    showChildComponent = false;
+    rowData:any = [
+    { id: 1, guid: "01231-09832-d2", vrs: "MedKeeper", gtin: "1621023456789", status: "Active", labeler: "M64921", created: "01-21-2025 / 10:22 AM", modified: "01-21-2025 / 10:22 AM",view:"1" },
+    { id: 2, guid: "01231-09832-d3", vrs: "TrackLink", gtin: "1621023456789", status: "Active", labeler: "M64921", created: "01-21-2025 / 10:33 AM", modified: "01-21-2025 / 10:33 AM" },
+    { id: 3, guid: "01231-09832-d4", vrs: "Jeison", gtin: "1621023456789", status: "Active", labeler: "M64921", created: "01-21-2025 / 09:29 AM", modified: "01-21-2025 / 09:29 AM" },
+    { id: 4, guid: "01231-09832-d5", vrs: "Track/Tracklib", gtin: "1621023456789", status: "Active", labeler: "M64921", created: "01-21-2025 / 08:52 AM", modified: "01-21-2025 / 08:52 AM" },
+    { id: 5, guid: "01231-09832-d6", vrs: "OpNet", gtin: "1621023456789", status: "Inactive", labeler: "M92375", created: "01-21-2025 / 09:30 AM", modified: "01-21-2025 / 09:30 AM" },
+    { id: 6, guid: "01231-09832-d7", vrs: "MedKeeper", gtin: "1621023456789", status: "Active", labeler: "M64921", created: "01-21-2025 / 11:02 AM", modified: "01-21-2025 / 11:02 AM" },
+    { id: 7, guid: "01231-09832-d8", vrs: "Jeison", gtin: "1621023456789", status: "Inactive", labeler: "M64921", created: "01-21-2025 / 08:25 AM", modified: "01-21-2025 / 08:25 AM" },
+    { id: 8, guid: "01231-09832-d9", vrs: "Track/Tracklib", gtin: "1621023456789", status: "Active", labeler: "M64921", created: "01-21-2025 / 10:22 AM", modified: "01-21-2025 / 10:22 AM" },
+    { id: 9, guid: "01231-09832-d10", vrs: "Movilink Cloud", gtin: "1621023456789", status: "Active", labeler: "M64921", created: "01-21-2025 / 10:23 AM", modified: "01-21-2025 / 10:23 AM" },
+    { id: 10, guid: "01231-09832-d11", vrs: "Jeison", gtin: "1621023456789", status: "Active", labeler: "M64921", created: "01-21-2025 / 10:24 AM", modified: "01-21-2025 / 10:24 AM" },
+    { id: 11, guid: "01231-09832-d2", vrs: "MedKeeper", gtin: "1621023456789", status: "Active", labeler: "M64921", created: "01-21-2025 / 10:22 AM", modified: "01-21-2025 / 10:22 AM" },
+    { id: 12, guid: "01231-09832-d3", vrs: "TrackLink", gtin: "1621023456789", status: "Active", labeler: "M64921", created: "01-21-2025 / 10:33 AM", modified: "01-21-2025 / 10:33 AM" },
+    { id: 13, guid: "01231-09832-d4", vrs: "Jeison", gtin: "1621023456789", status: "Active", labeler: "M64921", created: "01-21-2025 / 09:29 AM", modified: "01-21-2025 / 09:29 AM" },
+    { id: 14, guid: "01231-09832-d5", vrs: "Track/Tracklib", gtin: "1621023456789", status: "Active", labeler: "M64921", created: "01-21-2025 / 08:52 AM", modified: "01-21-2025 / 08:52 AM" },
+    { id: 15, guid: "01231-09832-d6", vrs: "OpNet", gtin: "1621023456789", status: "Inactive", labeler: "M92375", created: "01-21-2025 / 09:30 AM", modified: "01-21-2025 / 09:30 AM" },
+    { id: 16, guid: "01231-09832-d7", vrs: "MedKeeper", gtin: "1621023456789", status: "Active", labeler: "M64921", created: "01-21-2025 / 11:02 AM", modified: "01-21-2025 / 11:02 AM" },
+    { id: 17, guid: "01231-09832-d8", vrs: "Jeison", gtin: "1621023456789", status: "Inactive", labeler: "M64921", created: "01-21-2025 / 08:25 AM", modified: "01-21-2025 / 08:25 AM" },
+    { id: 18, guid: "01231-09832-d9", vrs: "Track/Tracklib", gtin: "1621023456789", status: "Active", labeler: "M64921", created: "01-21-2025 / 10:22 AM", modified: "01-21-2025 / 10:22 AM" },
+    { id: 19, guid: "01231-09832-d10", vrs: "Movilink Cloud", gtin: "1621023456789", status: "Active", labeler: "M64921", created: "01-21-2025 / 10:23 AM", modified: "01-21-2025 / 10:23 AM" },
+    { id: 20, guid: "01231-09832-d11", vrs: "Jeison", gtin: "1621023456789", status: "Active", labeler: "M64921", created: "01-21-2025 / 10:24 AM", modified: "01-21-2025 / 10:24 AM" },
+  ];
 
-
-  gridOptions: GridOptions = {
-    columnDefs:[{"field":"ID","headerName":"ID","headerClass":"id-header","width":100},{"field":"GUID","headerClass":"id-header","headerName":"GUID","width":138},{"field":"VRS_Partner","headerName":"VRS Partner","headerClass":"id-header","width":138},{"field":"GTIN","headerClass":"id-header","width":150},{"field":"Expiration_Date","headerName":"Expiration Date","headerClass":"id-header","width":150},{"field":"Status","headerClass":"id-header","width":130},{"field":"Requested","headerClass":"id-header"},{"field":"View","headerName":"","headerClass":"id-header","width":100}],
-    rowData: [
-      {"ID":"6","GUID":"0321012345676","VRS_Partner":1665432109876,"GTIN":"0523012345680","Expiration_Date":"18-02-2027","Status":"Pending","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"7","GUID":"0422012345678","VRS_Partner":1659876543210,"GTIN":"0321012345676","Expiration_Date":"22-05-2026","Status":"Failed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"8","GUID":"0523012345680","VRS_Partner":1648753092837,"GTIN":"0422012345678","Expiration_Date":"15-09-2026","Status":"Completed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"9","GUID":"0321012345676","VRS_Partner":1634821098765,"GTIN":"0523012345680","Expiration_Date":"28-11-2026","Status":"Pending","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"10","GUID":"0422012345678","VRS_Partner":1674302875643,"GTIN":"0321012345676","Expiration_Date":"03-06-2027","Status":"Failed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"11","GUID":"0523012345680","VRS_Partner":1689237451023,"GTIN":"0422012345678","Expiration_Date":"21-10-2026","Status":"Completed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"12","GUID":"0321012345676","VRS_Partner":1652304875693,"GTIN":"0523012345680","Expiration_Date":"11-01-2027","Status":"Pending","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"13","GUID":"0422012345678","VRS_Partner":1645782930215,"GTIN":"0321012345676","Expiration_Date":"09-03-2026","Status":"Failed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"14","GUID":"0523012345680","VRS_Partner":1631894026538,"GTIN":"0422012345678","Expiration_Date":"19-08-2027","Status":"Completed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"15","GUID":"0321012345676","VRS_Partner":1680327419534,"GTIN":"0523012345680","Expiration_Date":"25-12-2026","Status":"Pending","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"16","GUID":"0422012345678","VRS_Partner":1678094532045,"GTIN":"0321012345676","Expiration_Date":"04-07-2027","Status":"Failed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"17","GUID":"0523012345680","VRS_Partner":1645763012490,"GTIN":"0422012345678","Expiration_Date":"28-10-2026","Status":"Completed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"18","GUID":"0321012345676","VRS_Partner":1673048209542,"GTIN":"0523012345680","Expiration_Date":"11-05-2027","Status":"Pending","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"19","GUID":"0422012345678","VRS_Partner":1639205382037,"GTIN":"0321012345676","Expiration_Date":"03-08-2026","Status":"Failed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"20","GUID":"0523012345680","VRS_Partner":1640128095471,"GTIN":"0422012345678","Expiration_Date":"22-02-2026","Status":"Completed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"21","GUID":"0321012345676","VRS_Partner":1658391240562,"GTIN":"0523012345680","Expiration_Date":"13-09-2027","Status":"Pending","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"22","GUID":"0422012345678","VRS_Partner":1676342981673,"GTIN":"0321012345676","Expiration_Date":"07-01-2027","Status":"Failed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"23","GUID":"0523012345680","VRS_Partner":1664219856348,"GTIN":"0422012345678","Expiration_Date":"24-05-2026","Status":"Completed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"24","GUID":"0321012345676","VRS_Partner":1672034198432,"GTIN":"0523012345680","Expiration_Date":"09-09-2027","Status":"Pending","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"25","GUID":"0422012345678","VRS_Partner":1684572105678,"GTIN":"0321012345676","Expiration_Date":"11-04-2026","Status":"Failed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"26","GUID":"0523012345680","VRS_Partner":1650720498126,"GTIN":"0422012345678","Expiration_Date":"28-06-2027","Status":"Completed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"27","GUID":"0321012345676","VRS_Partner":1675328906712,"GTIN":"0523012345680","Expiration_Date":"02-02-2026","Status":"Pending","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"28","GUID":"0422012345678","VRS_Partner":1687934620174,"GTIN":"0321012345676","Expiration_Date":"14-10-2027","Status":"Failed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"29","GUID":"0523012345680","VRS_Partner":1648126573125,"GTIN":"0422012345678","Expiration_Date":"15-06-2026","Status":"Completed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"30","GUID":"0321012345676","VRS_Partner":1670918325603,"GTIN":"0523012345680","Expiration_Date":"21-02-2027","Status":"Pending","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"31","GUID":"0422012345678","VRS_Partner":1642203956987,"GTIN":"0321012345676","Expiration_Date":"11-03-2027","Status":"Failed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"32","GUID":"0523012345680","VRS_Partner":1684629830524,"GTIN":"0422012345678","Expiration_Date":"16-06-2026","Status":"Completed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"33","GUID":"0321012345676","VRS_Partner":1652914765731,"GTIN":"0523012345680","Expiration_Date":"05-10-2027","Status":"Pending","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"34","GUID":"0422012345678","VRS_Partner":1684712395238,"GTIN":"0321012345676","Expiration_Date":"22-01-2026","Status":"Failed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"35","GUID":"0523012345680","VRS_Partner":1674203641285,"GTIN":"0422012345678","Expiration_Date":"17-09-2026","Status":"Completed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"36","GUID":"0321012345676","VRS_Partner":1650182376654,"GTIN":"0523012345680","Expiration_Date":"02-04-2027","Status":"Pending","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"37","GUID":"0422012345678","VRS_Partner":1638457912856,"GTIN":"0321012345676","Expiration_Date":"18-06-2026","Status":"Failed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"38","GUID":"0523012345680","VRS_Partner":1685823120459,"GTIN":"0422012345678","Expiration_Date":"09-01-2027","Status":"Completed","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"39","GUID":"0321012345676","VRS_Partner":1672035467240,"GTIN":"0523012345680","Expiration_Date":"12-07-2027","Status":"Pending","Requested":"04-28-2025 / 11:52:AM","View":"View"},
-{"ID":"40","GUID":"0422012345678","VRS_Partner":1637826090137,"GTIN":"0321012345676","Expiration_Date":"15-05-2026","Status":"Failed","Requested":"04-28-2025 / 11:52:AM","View":"View"}
+  gridOptions:any = {
+    columnDefs: [
+      { field: "id", headerName: "ID", filter: false, width: 70,headerClass: 'customheader' },
+      { field: "guid", headerName: "GUID", filter: false,width: 200,headerClass: 'customheader'  },
+      { field: "vrs", headerName: "VRS Partner", filter: false,width: 200,headerClass: 'customheader' },
+      { field: "gtin", headerName: "GTIN", filter: false,headerClass: 'customheader'  },
+      {
+        field: "status", headerName: "Status",width: 150,headerClass: 'customheader' ,filter: false,
+        cellRenderer: (params:any) => {
+          const cls = params.value === "Active" ? "status-active" : "status-inactive";
+          if(params.value === "Active")
+          {
+            return `<span class="${cls}">${params.value}&nbsp;&nbsp<i class="fa fa-check-circle" aria-hidden="true"></i></span>`;
+          }
+          else
+          {
+            return `<span class="${cls}">${params.value}&nbsp;&nbsp<i class="fa fa-ban" aria-hidden="true"></i></span>`;
+          }
+        }
+      },
+      { field: "labeler", headerName: "Labeler Code", width: 150,filter: false ,headerClass: 'customheader' },
+      { field: "created", headerName: "Created Date/Time",  width: 250,filter: false ,headerClass: 'customheader' },
+      { field: "modified", headerName: "Modified Date/Time",filter: false ,headerClass: 'customheader' },
+      { field: "view", headerName: "", filter:false,width: 50,headerClass: 'customheader',
+        cellRenderer: (params: any) => {
+          return `<div class="custom-cell-border">
+                    &nbsp;&nbsp;<i class="fa fa-eye eye-icon" ng-model="hideMainContent" aria-hidden="true"></i>
+                  </div>`;
+        },
+        onCellClicked: (params: any) => {
+          if (params.event.target.classList.contains('eye-icon')) {
+            this.openFilterModal(params.data);
+          }
+        }
+       }
     ],
-    suppressRowHoverHighlight: true,
-    columnHoverHighlight:true,
+    rowData: this.rowData,
+    rowHeight: 53,
+    rowStyle: { fontFamily: 'National Park', fontSize: '13px',rowGap:'10px'},
+    defaultColDef: {
+      sortable: true,
+      filter: true,
+      resizable: true
+    },
+    pagination: true,
+    paginationPageSize: 20
   };
 
-  myTheme = themeMaterial.withParams({
-    fontFamily: "National Park",
-    headerFontFamily: "Brush Script MT",
-    cellFontFamily: "monospace",
-    fontSize:12,
-    textColor:'#555'
-    
-  });
 
-  theme: Theme | "legacy" = this.myTheme;
-  
+
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    
+    const gridDiv = document.querySelector<HTMLElement>("#recordsGrid")!;
+    const gridApi = createGrid(gridDiv, this.gridOptions);
+    this.closeModalSubscription = this.eventService.closeModalEvent.subscribe(() => {
+      this.showModal = false;
+    });
   }
+
+  ngOnDestroy() {
+    // Unsubscribe to avoid memory leaks
+    if (this.closeModalSubscription) {
+      this.closeModalSubscription.unsubscribe();
+    }
+  }
+
+  recordsManagementFilter() {
+    this.showFilter = true;
+    console.log("check",this.showFilter);
+  };
+
+
+  openFilterModal(data: any)
+  {
+    this.showModal       = true;
+    this.modalData       = data;
+    this.parentRowData   = this.modalData;
+    console.log("Opening Modal", data, this.showModal);
+  }
+
 
 }

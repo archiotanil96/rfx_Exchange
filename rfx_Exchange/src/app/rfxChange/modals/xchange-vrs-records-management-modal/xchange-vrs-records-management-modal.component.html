@@ -1,0 +1,123 @@
+<div class="side-modal-overlay" id="sideModalOverlay">
+  <div class="side-sidenav show" id="sideSidenav">
+    <div class="modal-header">    
+      <div class="header-title">Record Details&nbsp;<i class="fa fa-info-circle" aria-hidden="true"></i></div>
+      <div>
+        <button class="close-modal-btn" (click)="closeModal()" id="closeModalBtn">✖</button>
+      </div>
+      </div>
+    <div class="recordsManagementModalDiv" >
+      <div class="status-modal-attributes">
+          <div class="gtinStatus">
+              <button type="button" class="btn btn-primary">GTIN :0321012345676</button>
+             </div>
+          <div class="downloadStatus">
+              <button id="download" class="btn btn-primary">Download<span><i class="fa fa-download"></i></span></button>
+          </div>
+      </div>
+      <div class="tableContainer">
+          <div class="tableAttributes">
+            <h3 class="card-title">Attribute Details</h3>
+              <table>
+                  <tr>
+                      <th style="width:30%">Attribute</th>
+                      <th style="width:50%">Value</th>
+                  </tr>
+                  <tr>
+                    <td>GUID</td>
+                    <td class="valueRight">{{recordsModalData.guid}}</td>
+                  </tr>
+                  <tr>
+                    <td>VRS Partner</td>
+                    <td class="valueRight">{{recordsModalData.VRS_Partner}}</td>
+                  </tr>
+                  <tr>
+                    <td>Labeler code</td>
+                    <td>{{recordsModalData.labeler}}</td>
+                  </tr>
+                  <tr>
+                    <td>Next Record Owner</td>
+                    <td>{{recordsModalData.GTIN}}</td>
+                  </tr>
+                  <tr>
+                    <td>Enterprise ID</td>
+                    <td>{{recordsModalData.Version}}</td>
+                  </tr>
+                  <tr>
+                    <td>GTIN</td>
+                    <td>{{recordsModalData.GTIN}}</td>
+                  </tr>
+                  <tr>
+                    <td>Version</td>
+                    <td>{{recordsModalData.Version}}</td>
+                    </tr>
+                  <tr>
+                    <td>Start Expire Date</td>
+                    <td>{{recordsModalData.Start_Expire_Date}}</td>
+                  </tr>
+                  <tr>
+                      <td>End Expire Date</td>
+                      <td>{{recordsModalData.End_Expire_Date}}</td>
+                    </tr>
+                    <tr>
+                      <td>End Expire Date</td>
+                      <td>{{recordsModalData.End_Expire_Date}}</td>
+                    </tr>
+                    <tr>
+                      <td>End Expire Date</td>
+                      <td>{{recordsModalData.End_Expire_Date}}</td>
+                    </tr>
+                </table>
+          </div>
+          <div>
+            <div class="verificationStatus">
+              <div class="update-card">
+                <h3 class="card-title-update">Update Details</h3>
+              
+                <label for="status">Change Status</label>
+                <select [(ngModel)]="status"
+                [ngClass]="['styled-select', getStatusClass()]" id="status" class="input-field">
+                  <option value="" disabled selected hidden>Select status</option>
+                  <option value="active">Active</option>
+                  <option value="inactive">Inactive</option>
+                  <option value="deleted">Deleted</option>
+                </select>
+              
+                <label for="created">Created Date &amp; Time</label>
+                <div class="datetime-group">
+                  <input type="text" placeholder="02-20-2009" class="input-field" />
+                  <span>/</span>
+                  <input type="text" placeholder="10:30:45 AM" class="input-field" />
+                  <i class="calendar-icon">📅</i>
+                </div>
+              
+                <label for="modified">Modified Date/Time</label>
+                <div class="datetime-group">
+                  <input type="text" placeholder="02-20-2009" class="input-field" />
+                  <span>/</span>
+                  <input type="text" placeholder="10:30:45 AM" class="input-field" />
+                  <i class="calendar-icon">📅</i>
+                </div>
+              
+                <div class="checkbox-group">
+                  <input type="checkbox" id="isDeleted" checked />
+                  <label for="isDeleted">Is Deleted</label>
+                </div>
+              
+                <button class="update-btn">Update</button>
+              </div>
+             <div>
+            </div>
+          </div>
+          <div class="confirmationStatus">
+            <div class="update-card">
+            </div>
+           <div>
+          </div>
+        </div>
+      </div>
+      
+  </div>
+  
+  </div>
+</div>

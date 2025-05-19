@@ -1,0 +1,42 @@
+h3{margin-top:0;font-size:16px!important;color:#444;}
+.container{padding:20px;font-family:'National Park'!important;}
+.btn-primary,.btn-secondary,.close-btn,.sidenav-panel{font-family:'National Park';}
+.btn{padding:10px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;}
+.sidenav-overlay{position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.4);opacity:0;visibility:hidden;transition:opacity 0.3s;z-index:999;}
+.sidenav-overlay.active{opacity:1;visibility:visible;}
+.sidenav-panel{position:fixed;top:0;right:-400px;width:320px;height:calc(100vh - 20px);background:#fff;padding:20px;box-shadow:-2px 0 10px rgba(0,0,0,0.1);transition:right 0.3s;z-index:1000;font-family:'National Park';}
+.sidenav-panel::-webkit-scrollbar{display:none;}
+.sidenav-overlay.active .sidenav-panel{right:0;}
+.sidenav-panel h3{margin-top:0;font-size:20px;}
+.sidenav-panel label{display:block;margin-top:15px;font-weight:600;}
+.sidenav-panel input,.sidenav-panel select{width:100%!important;margin-top:5px;padding:10px;border-radius:5px;border:1px solid #ccc;background-color:#E0E0E0;font-family:inherit;color:#9f9f9f;font-size:13px;box-sizing:border-box;}
+.filter-footer{display:flex;justify-content:space-between;margin-top:20px;}
+.btn-primary{color:#eee;background-color:#2d69a7;}
+.btn-secondary{color:slategray;}
+.close-btn{position:absolute;top:12px;right:16px;background:transparent;border:none;font-size:22px;cursor:pointer;color:#333;}
+#filterForm{display:grid;gap:20px;row-gap:20px;}
+input, select{width:100%!important;color:#9f9f9f;font-family:'National Park';font-size:13px;}
+.isDeleted{display:flex;align-items:center;gap:8px;margin-top:16px;}
+.isDeleted input[type="checkbox"]{flex-shrink:0;}
+.isDeleted label{font-size:16px;font-weight:500;color:#9f9f9f;margin:0;font-family:'National Park';}
+.checkbox-group{width:10%!important;display:flex;align-items:center;margin-top:16px;gap:8px;}
+.checkbox-group label{margin:0;font-size:13px;font-weight:500;color:#444;}
+#checkbox_text{font-family:'National Park';font-size:16px;font-weight:500;color:#9f9f9f;}
+.filter-heading{font-size:16px;font-weight:600;color:#444;margin-bottom:12px;position:relative;}
+.filter-heading::before{content:'';position:absolute;left:-26px;width:6px;height:22px;border-top-left-radius:20px;border-bottom-left-radius:20px;background-color:#2bb1a5;}
+.ag-theme-alpine .ag-paging-panel{display:flex;justify-content:center;align-items:center;font-size:13px;border-top:1px solid #ccc;padding:5px 10px;color:#ccc;}
+.ag-theme-alpine .ag-paging-panel span,.ag-theme-alpine .ag-paging-panel select{margin:0 5px;color:#ccc;}
+.ag-theme-alpine .ag-paging-row-summary-panel,.ag-theme-alpine .ag-paging-page-summary-panel{font-weight:bold;color:#ccc;}
+.ag-theme-alpine .ag-paging-panel select{padding:2px 4px;font-size:13px;height:auto;color:#ccc;}
+.autocomplete-form{margin-top:20px;font-family:'National Park';font-size:13px!important;}
+.autocomplete-form label{display:block;margin-bottom:5px;font-weight:bold;font-family:'National Park';font-size:13px!important;}
+.autocomplete-form input[type="text"]{width:100%;padding:8px;box-sizing:border-box;font-family:'National Park';font-size:13px!important;}
+.autocomplete-list{top:100%;left:0;right:0;border:1px solid #ccc;border-top:none;background:white;max-height:150px;overflow-y:auto;font-family:'National Park';font-size:13px!important;list-style-type:none;padding:0;margin:0;z-index:1000;}
+.autocomplete-list li{padding:8px;cursor:pointer;font-family:'National Park';font-size:13px!important;}
+.autocomplete-list li:hover{background-color:#f0f0f0;font-family:'National Park';font-size:13px!important;}
+.remove-btn-option{color:red;font-size:18px;border:none;background: none;}
+.multiselect-dropdown,.select-dropdown,.select-menu{position:absolute!important;top:100%!important;left:0;right:0;background:#fff!important;border:1px solid #ccc!important;border-radius:0 0 5px 5px!important;max-height:150px;overflow-y:auto;box-shadow:0 2px 6px rgba(0,0,0,0.1);z-index:1000;font-family:'National Park';font-size:13px!important;color:#444!important;list-style:none;padding:0;margin:0;}
+.multiselect-dropdown li,.select-dropdown li{padding:8px 12px;cursor:pointer;}
+.multiselect-dropdown li:hover,.select-dropdown li:hover{background-color:#f0f0f0;}
+/* .tag{padding: 13px; background-color: aliceblue;border-radius: 5px;}
+.selectedList{margin-top:15px;} */

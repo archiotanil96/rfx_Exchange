@@ -1,0 +1,40 @@
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; font-family: 'National Park', sans-serif; height: 100%; background: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; z-index: 999; }
+.modal-content { position: relative; background: white; padding: 24px; border-radius: 12px; width: 40%; max-width: 900px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); }
+.modal-icon { width: 64px; height: 64px; border-radius: 50%; background-color: #FFF7E6; display: flex; align-items: center; justify-content: center; }
+.warning-svg { width: 32px; height: 32px; stroke: #F59E0B; }
+.modal-title-message { font-size: 18px; font-weight: 600; color: #111827; margin-bottom: 10px; }
+.modal-desc {font-weight:600;font-size: 14px; color: #c23a22; line-height: 1.6; margin-bottom: 24px;}
+.pill-group { display: flex; justify-content: center; align-items: center; gap: 12px; margin-bottom: 28px; }
+.green-pill { background-color: #10B981; color: #fff; font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 50px; border: none; min-width: 90px; }
+.center-pill { background-color: #EFF6FF; color: #2563EB; font-size: 13px; font-weight: 500; padding: 6px 16px; border-radius: 50px; border: 1px solid #93C5FD; }
+.btn-primary { font-family: 'National Park'; background-color: #1D4ED8; color: #fff; font-weight: 500; padding: 10px 22px; font-size: 14px; border: none; border-radius: 8px; cursor: pointer; margin-top: 8px; }
+.btn-primary:hover { background-color: #1E40AF; }
+.btn-secondary { font-family: 'National Park'; background-color: #10B981; color: #fff; font-weight: 500; padding: 10px 22px; font-size: 14px; border: none; border-radius: 8px; cursor: pointer; margin-top: 8px; }
+.modal-buttons { display: inline-flex; }
+#arrow { padding: 12px; }
+.three-column-layout { display: flex; gap: 16px; justify-content: space-between; }
+.column1 { width: 12%; padding: 16px; border-radius: 8px; }
+.column2 { float: left; width: 100%; }
+.close-btn {color: red;display: block; margin-top: 10px; background-color: #1D4ED8; color: #fff; padding: 10px 20px; font-size: 14px; font-family: 'National Park'; border: none; border-radius: 8px; cursor: pointer; }
+.close-modal {color: red;position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border: none; border-radius: 50%; background-color: #f0f0f0;font-size: 20px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); transition: background-color 0.2s ease, transform 0.2s ease; z-index: 9999; }
+.close-modal:hover { background-color: #e0e0e0; transform: scale(1.05); }
+.record-pill{font-weight:500;}
+.modal-title{margin: 0px;font-size:20px;}
+.submit-btn { display: block; margin-top: 10px; background-color: #1D4ED8; color: #fff; padding: 10px 20px; font-size: 14px; font-family: 'National Park'; border: none; border-radius: 8px; cursor: pointer; }
+
+.success-svg {
+    color: #22c55e; /* green-500 */
+    width: 24px;
+    height: 24px;
+  }
+  
+  .success-text {
+    font-size: 1rem;
+    color: #22c55e;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+

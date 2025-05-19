@@ -1,0 +1,70 @@
+<!-- SideNav Overlay -->
+  <div class="sidenav-overlay" id="filterOverlay">
+    <div class="sidenav-panel">
+      <button class="close-btn" aria-label="Close" id="closeFilter" (click)="onClose()">&times;</button>
+      <h3 class="filter-heading">Verification Records Filter</h3>
+      <form id="filterForm">
+        <input type="text" name="guid" placeholder="GUID" />
+        <input type="text" name="manufacturer" placeholder="Manufacturer" />
+        <input type="text" name="vrs_provider" placeholder="VRS Provider" />
+        <input type="text" name="gtin" placeholder="GTIN" />
+      
+        <select name="status">
+          <option value="">Status</option>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+      
+        <select name="version">
+          <option value="">Version</option>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+      
+        <input
+          name="start_date"
+          placeholder="Start Date"
+          class="textbox-n"
+          type="text"
+          onfocus="(this.type='date')"
+          onblur="(this.type='text')"
+        />
+      
+        <input
+          name="end_date"
+          placeholder="End Date"
+          class="textbox-n"
+          type="text"
+          onfocus="(this.type='date')"
+          onblur="(this.type='text')"
+        />
+      
+        <input
+          name="created_date"
+          placeholder="Created Date"
+          class="textbox-n"
+          type="text"
+          onfocus="(this.type='date')"
+          onblur="(this.type='text')"
+        />
+      
+        <input
+          name="expired_date"
+          placeholder="Expired Date"
+          class="textbox-n"
+          type="text"
+          onfocus="(this.type='date')"
+          onblur="(this.type='text')"
+        />
+      <div class="isDeleted">
+        <div id="checkbox"><input type="checkbox" name="is_deleted"/></div>
+        <div id="checkbox_text">&nbsp;&nbsp;is Deleted</div>
+      </div>
+      </form>
+      
+      <div class="filter-footer">
+        <button class="btn btn-secondary">Reset</button>
+        <button class="btn btn-primary">Apply</button>
+      </div>
+    </div>
+  </div>

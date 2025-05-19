@@ -1,1 +1,36 @@
-<p>xchange-vrs-pull-records works!</p>
+<!-- 
+<div *ngIf="showFilter">
+    <app-xchange-vrs-records-management-filter></app-xchange-vrs-records-management-filter>
+  </div> -->
+  <div class="page-header">
+    <div class="header-title">Pull Records&nbsp;<i class="fa fa-download"></i></div>
+    <div class="header-actions">
+      <button class="btn push-btn">
+        Pull Data Manually <i class="fa fa-download"></i>
+      </button>
+    </div>
+  </div>
+  <br>
+  <div class="recordsManagementDataDiv" [hidden]="!isVisible">
+    <div class="export-header">
+        <div class="header-title">
+            <button class="btn export-btn">
+                Export<i class="fas fa-file-export"></i>
+              </button>
+        </div>
+        <div class="filter-actions">
+          <button (click)="showFilter = !showFilter"  class="btn filter-btn">
+            Filter <i class="fa fa-sliders"></i>
+          </button>
+        </div>
+      </div>
+  <div class="pushTable">
+    <div id="pushGrid" style="border:0px!"  class="ag-theme-alpine" >
+    </div>
+  </div>
+  </div>
+
+<!-- 
+  <div *ngIf="showModal">
+    <app-xchange-vrs-records-management-modal [parentVrsExchangeData]="parentRowData"></app-xchange-vrs-records-management-modal>
+  </div> -->

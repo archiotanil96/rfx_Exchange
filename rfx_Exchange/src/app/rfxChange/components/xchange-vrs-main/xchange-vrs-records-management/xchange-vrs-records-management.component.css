@@ -1,0 +1,19 @@
+.page-header{height:67px;display:flex;justify-content:space-between;align-items:center;margin-top:5px;font-family:'National Park';}
+.header-title{font-size:34px;font-weight:600;color:#333640;}
+.header-actions{display:flex;gap:10px;}
+.btn{border:none;padding:8px 12px;border-radius:4px;color:white;font-size:14px;cursor:pointer;display:flex;font-weight:500;font-family:'National Park';align-items:center;gap:6px;}
+.pull-btn{background-color:#28c76f;}
+.push-btn{background-color:#1e62d0;}
+.recordsManagementDataDiv{background-color:#f5faff;top:97px;left:0;right:0;bottom:20px;border-radius:5px;overflow:hidden;}
+.export-header{padding:0px 20px 0px 20px;height:97px;display:flex;justify-content:space-between;align-items:center;margin-top:5px;font-family:'National Park';}
+.export-btn{background-color:#2d69a7;font-weight:500;}
+.filter-btn{background-color:#e0e0e0;color:#333640;font-weight:500;}
+.recordsTable .ag-theme-alpine{border:0px !important;width:100%;border-radius:5px !important;height:calc(70vh - 20px);font-family:'National Park';font-size:14px !important;padding:20px;box-sizing:border-box;top:0;left:0;right:0;bottom:20px;overflow:hidden;}
+.status-active{background-color:#28c76f;color:white;padding:2px 8px;border-radius:4px;}
+.status-inactive{background-color:#ea5455;color:white;padding:2px 8px;border-radius:4px;}
+.customheader{font-family:'National Park';color:#444;}
+.ag-row{border-left:0px !important;}
+.ag-theme-alpine .ag-cell{padding-top:12px;padding-bottom:12px;font-family:'National Park';font-size:13px;font-weight:600;color:#444;}
+.custom-cell-border{border:1px solid #2ca8a4;border-radius:4px;color:#2ca8a4;width:110%;}
+.ag-theme-alpine .ag-paging-panel{font-family:'National Park';font-size:14px;padding:8px;border-bottom:1px solid #e0e0e0;}
+.recordsTable{display:flex;flex-direction:column-reverse;}

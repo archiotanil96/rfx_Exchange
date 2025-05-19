@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule],
   exports: [RouterModule]
 })
 export class XchangeVrsMainPageRoutingModule { }

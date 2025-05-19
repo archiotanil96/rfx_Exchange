@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { XchangeVrsRecordsManagementModalComponent } from 'src/app/rfxChange/modals/xchange-vrs-records-management-modal/xchange-vrs-records-management-modal/xchange-vrs-records-management-modal.component';
+import { XchangeVrsRecordsManagementFilterModule } from 'src/app/rfxChange/module/xchange-records-management-filter-module//xchange-vrs-records-management-filter.module';
 import { XchangeVrsRecordsManagementRoutingModule } from './xchange-vrs-records-management-routing.module';
 
 
@@ -8,8 +8,9 @@ import { XchangeVrsRecordsManagementRoutingModule } from './xchange-vrs-records-
   declarations: [],
   imports: [
     CommonModule,
+    XchangeVrsRecordsManagementFilterModule,
     XchangeVrsRecordsManagementRoutingModule,
-    XchangeVrsRecordsManagementModalComponent
+    
   ]
 })
 export class XchangeVrsRecordsManagementModule { }

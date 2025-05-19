@@ -7,8 +7,8 @@ import { XchangeVrsVerificationEventsStatusModalModule } from 'src/app/rfxChange
 import { XchangeVrsVerificationEventsStatusModalComponent } from 'src/app/rfxChange/modals/xchange-vrs-verification-events-status-modal/xchange-vrs-verification-events-status-modal.component';
 import { XchangeVrsRecordsManagementComponent } from '../xchange-vrs-records-management/xchange-vrs-records-management.component';
 import { XchangeVrsRecordsManagementModule } from '../xchange-vrs-records-management/xchange-vrs-records-management.module';
-import { XchangeVrsRecordsManagementModalModule } from 'src/app/rfxChange/modals/xchange-vrs-records-management-modal/xchange-vrs-records-management-modal/xchange-vrs-records-management-modal.module';
-import { XchangeVrsRecordsManagementModalComponent } from 'src/app/rfxChange/modals/xchange-vrs-records-management-modal/xchange-vrs-records-management-modal/xchange-vrs-records-management-modal.component';
+import { XchangeVrsRecordsManagementModalModule } from 'src/app/rfxChange/modals/xchange-vrs-records-management-modal/xchange-vrs-records-management-modal.module';
+import { XchangeVrsRecordsManagementModalComponent } from 'src/app/rfxChange/modals/xchange-vrs-records-management-modal/xchange-vrs-records-management-modal.component';
 
 @NgModule({
   declarations: [],

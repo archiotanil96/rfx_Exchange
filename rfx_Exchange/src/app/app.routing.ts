@@ -22,21 +22,13 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 
   { path: 'dashboard', component: XchangeDashboardComponent },
-
-  {
-    path: 'vrs',
-    component: XchangeVrsDashboardComponent,
-    children: [
-      { path: '', redirectTo: 'records-management', pathMatch: 'full' },
-      { path: 'verification-events', component: XchangeVerificationEventsComponent },
-      { path: 'vrs-partners', component: XchangeVrsPartnersComponent },
-      { path: 'records-management', component: XchangeVrsRecordsManagementComponent },
-      { path: 'pull-records', component: XchangeVrsPullRecordsComponent },
-      { path: 'push-records', component: XchangeVrsPushRecordsComponent },
-      { path: 'push-pull-analytics', component: XchangeVrsPushPullAnalyticsComponent }
-    ]
-  },
-
+  { path: 'vrsdashboard', component: XchangeVrsDashboardComponent },
+  { path: 'verification-events', component: XchangeVerificationEventsComponent },
+  { path: 'partners', component: XchangeVrsPartnersComponent },
+  { path: 'records-management', component: XchangeVrsRecordsManagementComponent },
+  { path: 'pull-records', component: XchangeVrsPullRecordsComponent },
+  { path: 'push-records', component: XchangeVrsPushRecordsComponent },
+  { path: 'analytics', component: XchangeVrsPushPullAnalyticsComponent },
   { path: 'user-management', component: XchangeUserManagementComponent },
   { path: 'enterprise-data', component: XchangeEnterpriseDataComponent },
   { path: 'connections-summary', component: XchangeConnectionsSummaryComponent },

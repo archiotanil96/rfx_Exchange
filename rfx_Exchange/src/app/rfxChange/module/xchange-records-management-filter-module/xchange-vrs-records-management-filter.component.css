@@ -1,0 +1,27 @@
+h3{margin-top:0;font-size:16px !important;color:#444;}
+.container{padding:20px;font-family:'National Park' !important;}
+.btn-primary,.btn-secondary,.close-btn,.sidenav-panel{font-family:'National Park';}
+.btn{padding:10px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;}
+.sidenav-overlay{position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.4);opacity:0;visibility:hidden;transition:opacity 0.3s;z-index:999;}
+.sidenav-overlay.active{opacity:1;visibility:visible;}
+.sidenav-panel{position:fixed;top:0;right:-400px;width:320px;height:calc(100vh - 20px);background:#fff;padding:20px;box-shadow:-2px 0 10px rgba(0,0,0,0.1);transition:right 0.3s;z-index:1000;}
+.sidenav-panel::-webkit-scrollbar{display:none;}
+.sidenav-overlay.active .sidenav-panel{right:0;}
+.sidenav-panel h3{margin-top:0;font-size:20px;}
+.sidenav-panel label{display:block;margin-top:15px;font-weight:600;}
+.sidenav-panel input,.sidenav-panel select{width:100%;margin-top:5px;padding:10px;border-radius:5px;border:1px solid #ccc;background-color:#E0E0E0;font-family:inherit;}
+.filter-footer{display:flex;justify-content:space-between;margin-top:20px;}
+.btn-primary{color:#eee;background-color:#2d69a7;}
+.btn-secondary{color:slategray;}
+.close-btn{position:absolute;top:12px;right:16px;background:transparent;border:none;font-size:22px;cursor:pointer;color:#333;}
+#filterForm{display:grid;gap:20px;row-gap:20px;}
+input{width:95% !important;color:#9f9f9f;}
+select{width:102% !important;color:#9f9f9f;}
+.isDeleted{display:flex;}
+#checkbox_text{font-family:'National Park';font-size:16px;font-weight:500;color:#9f9f9f;}
+.filter-heading{font-size:16px;font-weight:600;color:#444;margin-bottom:12px;position:relative;}
+.filter-heading::before{content:'';position:absolute;left:-26px;width:6px;height:22px;border-top-left-radius:20px;border-bottom-left-radius:20px;background-color:#2bb1a5;}
+.ag-theme-alpine .ag-paging-panel{display:flex;justify-content:center;align-items:center;font-size:13px;border-top:1px solid #ccc;padding:5px 10px;color:#ccc;}
+.ag-theme-alpine .ag-paging-panel span,.ag-theme-alpine .ag-paging-panel select{margin:0 5px;color:#ccc;}
+.ag-theme-alpine .ag-paging-row-summary-panel,.ag-theme-alpine .ag-paging-page-summary-panel{font-weight:bold;color:#ccc;}
+.ag-theme-alpine .ag-paging-panel select{padding:2px 4px;font-size:13px;height:auto;color:#ccc;}

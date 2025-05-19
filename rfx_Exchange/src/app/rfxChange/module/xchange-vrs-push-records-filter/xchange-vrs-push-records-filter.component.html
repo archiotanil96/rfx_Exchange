@@ -1,0 +1,92 @@
+<!-- SideNav Overlay -->
+<div class="sidenav-overlay" id="filterOverlay">
+    <div class="sidenav-panel">
+      <button class="close-btn" aria-label="Close" id="closeFilter">&times;</button>
+      <h3 class="filter-heading">Push Records Filter</h3>
+      <form id="filterForm">
+        <form [formGroup]="form" (ngSubmit)="submit()" class="autocomplete-form" autocomplete="off">
+            
+            <div class="multiselect-input" (click)="inputField.focus()"> 
+              <input
+                #inputField
+                id="fruitInput"
+                type="text"
+                formControlName="fruitInput"
+                placeholder="Start typing..."
+                autocomplete="off"
+              />
+            </div>
+          
+            <ul *ngIf="filteredSuggestions.length" class="autocomplete-list">
+              <li *ngFor="let suggestion of filteredSuggestions" (click)="selectSuggestion(suggestion)">
+                {{ suggestion }}
+              </li>
+            </ul>
+            <div class="selectedList">
+              <span class="tag" *ngFor="let item of selectedItems">
+                {{ item }}
+                <button type="button" class="remove-btn-option" (click)="removeItem(item)">×</button>
+              </span>
+            </div>
+          </form>
+          
+          
+        <select name="status">
+          <option value="">Status</option>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+      
+        <select name="version">
+          <option value="">Version</option>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+      
+        <input
+          name="start_date"
+          placeholder="Start Date"
+          class="textbox-n"
+          type="text"
+          onfocus="(this.type='date')"
+          onblur="(this.type='text')"
+        />
+      
+        <input
+          name="end_date"
+          placeholder="End Date"
+          class="textbox-n"
+          type="text"
+          onfocus="(this.type='date')"
+          onblur="(this.type='text')"
+        />
+      
+        <input
+          name="created_date"
+          placeholder="Created Date"
+          class="textbox-n"
+          type="text"
+          onfocus="(this.type='date')"
+          onblur="(this.type='text')"
+        />
+      
+        <input
+          name="expired_date"
+          placeholder="Expired Date"
+          class="textbox-n"
+          type="text"
+          onfocus="(this.type='date')"
+          onblur="(this.type='text')"
+        />
+        <div class="checkbox-group">
+            <input type="checkbox" id="isDeleted" checked />
+            <label for="isDeleted">Is Deleted</label>
+          </div>
+      </form>
+      
+      <div class="filter-footer">
+        <button class="btn btn-secondary">Reset</button>
+        <button class="btn btn-primary">Apply</button>
+      </div>
+    </div>
+  </div>

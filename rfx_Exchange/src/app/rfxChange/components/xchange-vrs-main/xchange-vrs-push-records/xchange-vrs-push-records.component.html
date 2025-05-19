@@ -1,1 +1,47 @@
-<p>xchange-vrs-push-records works!</p>
+
+<div *ngIf="showFilter">
+     <app-xchange-vrs-push-records-filter  *ngIf="showFilter" (close)="onFilterClose()" ></app-xchange-vrs-push-records-filter>
+  </div>
+<div class="page-header">
+    <div class="header-title">Push Records&nbsp;<i class="fa fa-upload"></i></div>
+    <div class="header-actions">
+      <button (click)="enableAttributes()" class="btn push-btn">
+        Push Data Manually <i class="fa fa-upload"></i>
+      </button>
+      <button (click)="showLatestPushedRecords()" class="btn push-btn" id="lastPushed">
+        Last Pushed Data<i class="fa fa-upload"></i>
+      </button>
+    </div>
+  </div>
+  <br>
+  <div class="recordsManagementDataDiv" [hidden]="!isVisible">
+    <div class="export-header">
+        <div class="header-title">
+            <button class="btn export-btn">
+                Export<i class="fas fa-file-export"></i>
+              </button>
+              <div class="header-details">
+                  No of selected records : 236
+            </div>
+        </div>
+        <div class="filter-actions">
+          <div class="push-details">
+            <button (click)="openFilterModal()"class="btn export-btn">
+              Push<i class="fas fa-file-export"></i>
+            </button>
+          </div>
+          <button (click)="showFilter = !showFilter"  class="btn filter-btn">
+            Filter <i class="fa fa-sliders"></i>
+          </button>
+        </div>
+      </div>
+  <div class="pushTable">
+    <div id="pushGrid" class="ag-theme-alpine">
+    </div>
+  </div>
+  </div>
+
+
+  <div *ngIf="showModal">
+  <app-xchange-vrs-push-records-modal></app-xchange-vrs-push-records-modal>
+  </div>

@@ -1,40 +1,28 @@
-body{background-color: #333;}
-.sidenav{width:120%!important;height:100vh;background:#fff;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid #e0e0e0;font-family:'National Park'!important;color:#333;}
-.logo{text-align:center;padding:24px 0;}
+body{background-color:#333;}
+.sidenav{width:130% !important;height:calc(100vh - 20px);background:#fff;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid #e0e0e0;font-family:'National Park' !important;color:#333;top:0;left:0;right:0;bottom:20px;overflow:hidden;box-sizing:border-box;}
+.logo{position:sticky;top:0;background:#fff;padding:24px 0;text-align:center;z-index:2;}
 .logo img{width:100px;height:100px;}
 .nav{list-style:none;margin:0;padding:0;flex-grow:1;}
 .nav li a{display:flex;align-items:center;gap:20px;padding:10px 16px 10px 20px;color:#333;text-decoration:none;transition:0.3s;font-weight:600;font-size:14px;}
 .nav li a:hover{background:#f5faff;}
 .nav li a.active{position:relative;display:flex;align-items:center;background-color:#e6f2ff;border-radius:7px;margin:0 8px;cursor:pointer;font-weight:600;color:#1d5fad;font-size:14px;}
-.nav li a.active::before {content: "";position:absolute;left: 0;top: 1px;bottom: 1px;width: 4px;background-color: #007bff;border-radius: 0 4px 4px 0;margin-left:-6px;}
-
+.nav li a.active::before{content:"";position:absolute;left:0;top:1px;bottom:1px;width:4px;background-color:#007bff;border-radius:0 4px 4px 0;margin-left:-6px;}
 .nav i{width:16px;text-align:center;font-size:14px;color:inherit;}
 .nav-group .nav-item{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-radius:12px;font-weight:600;cursor:pointer;}
 .nav-group .nav-item .label{margin-left:10px;flex:1;}
 .nav-group .nav-item .fa{font-size:14px;}
-.submenu{list-style:none;margin:0;padding:0;}
-.submenu li a{display:block;padding:8px 42px;color:#444;text-decoration:none;font-size:14px;}
-.submenu li a:hover{background:e6f2ff;color:#1d5fad}
-.submenu li a.active{background:#e6f2ff;border-left:4px solid #007bff;color:#1d5fad;}
-
-
-.user-profile{padding:16px 20px;display:flex;align-items:center;background:#f9f9f9;}
+.submenu{list-style:none;margin-top:10px;padding:0;}
+.submenu li a{display:block;padding:8px 54px;color:#444;text-decoration:none;font-size:14px;}
+.submenu li a:hover{background:e6f2ff;color:#1d5fad;}
+.submenu li a.active{background:#e6f2ff;color:#1d5fad;}
+.user-profile{position:sticky;width:81%;bottom:0;background:steelblue;padding:16px 20px;display:flex;align-items:center;z-index:2;border-radius:5px;}
 .avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;}
 .user-info{margin-left:10px;}
 .user-info .name{margin:0;font-size:14px;font-weight:600;color:#ffff;}
 .user-info .email{margin:0;font-size:12px;color:#ffff;}
-
 .sidenav::-webkit-scrollbar{display:none;}
-
-
-.vrs-active{display:flex;align-items:center;gap:7px;background-color:#e6f2ff;border-radius:7px!important;padding:10px 13px;margin:0 8px;cursor:pointer;font-weight:600;color:#1d5fad;font-size:14px;}
+.vrs-active{display:flex;align-items:center;gap:7px;background-color:#e6f2ff;border-radius:7px !important;padding:10px 13px;margin:0 8px;cursor:pointer;font-weight:600;color:#1d5fad;font-size:14px;}
 .vrs-active i{color:#1d5fad;font-size:14px;display:inline-block;min-width:18px;text-align:center;}
 .vrs-active .label{margin-left:10px;flex:1;}
 .vrs-active::before{content:"";position:absolute;left:0;top:2px;bottom:6px;width:5px;background-color:#007bff;border-radius:0 4px 4px 0;margin-right:-30px;margin-left:-8px;height:30px;}
-.profile-ellipsis {position: absolute;top: 8px;right: 10px;color: #ffffff;font-size: 14px;cursor: pointer;}
-
-
-.sidenav{width:260px;height:100vh;background:#fff;display:flex;flex-direction:column;justify-content:flex-start;font-family:'Inter',sans-serif;color:#333;position:relative;overflow-y:auto;}
-.logo{position:sticky;top:0;background:#fff;padding:24px 0;text-align:center;z-index:2;}
-.user-profile{position:sticky;width:81%;bottom:0;background:steelblue;padding:16px 20px;display:flex;align-items:center;z-index:2;border-radius:5px;}
-
+.profile-ellipsis{position:absolute;top:8px;right:10px;color:#ffffff;font-size:14px;cursor:pointer;}

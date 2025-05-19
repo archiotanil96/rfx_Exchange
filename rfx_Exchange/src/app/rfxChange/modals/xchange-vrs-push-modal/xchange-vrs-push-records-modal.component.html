@@ -1,0 +1,58 @@
+<div class="modal-overlay" *ngIf="isModalOpen">
+  <div class="modal-content">
+    <div class="modalData">
+      <h1 class="modal-title">Push Records</h1>
+      <button class="close-modal" (click)="closeModal()">×</button>
+    </div>
+    <div class="pushInital" #pushInital>
+      <div class="three-column-layout">
+        <div class="column1">
+          <div class="modal-icon-wrapper">
+            <div class="modal-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="warning-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.054 0 1.59-1.276.832-2.037L13.414 4.586a1.2 1.2 0 00-1.828 0L3.25 16.963c-.758.76-.222 2.037.832 2.037z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="column2">
+          <h2 class="modal-title-message">Ready to push the Records?</h2>
+          <p class="modal-desc">Once pushed, this action cannot be undone.<br>Do you want to proceed?</p>
+          <div class="record-pill">Record(s) selected: {{ recordCount }}</div>
+          <div class="modal-buttons">
+            <button class="btn-primary">Rfxcel</button>
+            <div class="text-gray-800 text-xl" id="arrow"><i class="fa-solid fa-arrow-right-long"></i></div>
+            <button class="btn-secondary">Mediledger</button>
+          </div>
+          <button class="submit-btn" (click)="submitModal()">Push Records</button>
+        </div>
+    </div>
+    </div>
+    <div class="pushSucess" #pushSuccess>
+      <div class="three-column-layout">
+        <div class="column1">
+          <div class="modal-icon-wrapper">
+            <div class="modal-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="success-svg" viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="12" r="10" fill="currentColor" />
+                <path fill="white" d="M10 14.5l-2.5-2.5-1.5 1.5L10 17.5l8-8-1.5-1.5z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="column2">
+          <h2 class="modal-title-message">Records Pushed</h2>
+          <p class="modal-desc">The records have been pushed successfully.</p>
+          <div class="record-pill">Record(s) selected: {{ recordCount }}</div>
+          <div class="modal-buttons">
+            <button class="btn-primary">Rfxcel</button>
+            <div class="text-gray-800 text-xl" id="arrow"><i class="fa-solid fa-arrow-right-long"></i></div>
+            <button class="btn-secondary">Mediledger</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

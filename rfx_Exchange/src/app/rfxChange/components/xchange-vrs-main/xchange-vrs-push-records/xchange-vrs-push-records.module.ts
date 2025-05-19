@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { XchangeVrsPushRecordsModalModule } from "../../../modals/xchange-vrs-push-modal/xchange-vrs-push-records-modal.module";
 
 import { XchangeVrsPushRecordsRoutingModule } from './xchange-vrs-push-records-routing.module';
 
@@ -8,6 +9,7 @@ import { XchangeVrsPushRecordsRoutingModule } from './xchange-vrs-push-records-r
   declarations: [],
   imports: [
     CommonModule,
+    XchangeVrsPushRecordsModalModule,
     XchangeVrsPushRecordsRoutingModule
   ]
 })

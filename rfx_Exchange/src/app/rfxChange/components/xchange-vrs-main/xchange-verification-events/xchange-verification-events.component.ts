@@ -3,12 +3,11 @@ import { AgGridAngular } from "ag-grid-angular";
 import { ColDef, GridOptions,Theme,themeMaterial } from "ag-grid-community";
 import { AllCommunityModule, ModuleRegistry } from "ag-grid-community";
 import { Router } from '@angular/router';
-import { XchangeVerificationDetailsFilterComponent } from 'src/app/rfxChange/model/xchange_filter_modal/xchange_verification_details/xchange-verification-details-filter/xchange-verification-details-filter.component';
 import { fontFamilyValueToCss } from 'ag-grid-community/dist/types/src/theming/theme-types';
 import { XchangeVrsVerificationEventsStatusModalModule } from 'src/app/rfxChange/modals/xchange-vrs-verification-events-status-modal/xchange-vrs-verification-events-status-modal.module';
 import { XchangeVrsVerificationEventsStatusModalComponent } from 'src/app/rfxChange/modals/xchange-vrs-verification-events-status-modal/xchange-vrs-verification-events-status-modal.component';
 import { XchangeVrsRecordsManagementComponent } from "../xchange-vrs-records-management/xchange-vrs-records-management.component";
-import { XchangeVrsRecordsManagementModalComponent } from "../../../modals/xchange-vrs-records-management-modal/xchange-vrs-records-management-modal/xchange-vrs-records-management-modal.component";
+import { XchangeVrsRecordsManagementModalComponent } from "../../../modals/xchange-vrs-records-management-modal/xchange-vrs-records-management-modal.component";
 
 ModuleRegistry.registerModules([AllCommunityModule]);
 interface IRow {
@@ -32,7 +31,7 @@ interface IRow {
 @Component({
   selector: 'app-xchange-verification-events',
   standalone: true,
-  imports: [AgGridAngular, XchangeVrsRecordsManagementComponent, XchangeVrsVerificationEventsStatusModalComponent, XchangeVrsRecordsManagementModalComponent],
+  imports: [],
   templateUrl: './xchange-verification-events.component.html',
   styleUrl: './xchange-verification-events.component.css'
 })
@@ -115,6 +114,8 @@ export class XchangeVerificationEventsComponent implements OnInit{
     console.log("clicked");
     this.router.navigate(['/login']);
   }
+  
+
 }
 
 
