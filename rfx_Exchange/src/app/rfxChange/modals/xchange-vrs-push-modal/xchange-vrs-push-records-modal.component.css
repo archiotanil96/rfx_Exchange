@@ -22,19 +22,9 @@
 .modal-title{margin: 0px;font-size:20px;}
 .submit-btn { display: block; margin-top: 10px; background-color: #1D4ED8; color: #fff; padding: 10px 20px; font-size: 14px; font-family: 'National Park'; border: none; border-radius: 8px; cursor: pointer; }
 
-.success-svg {
-    color: #22c55e; /* green-500 */
-    width: 24px;
-    height: 24px;
-  }
-  
-  .success-text {
-    font-size: 1rem;
-    color: #22c55e;
-  }
+.success-svg { color: #22c55e; width: 24px; height: 24px; }
+.success-text { font-size: 1rem; color: #22c55e; }
+.hidden { display: none; }
 
-  .hidden {
-    display: none;
-  }
 
 

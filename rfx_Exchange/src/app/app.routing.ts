@@ -18,6 +18,7 @@ import { XchangeCertificateManagementComponent } from './rfxChange/components/xc
 import { XchangeErrorManagementComponent } from './rfxChange/components/xchange-error-management/xchange-error-management.component';
 import { XchangeAuditPageComponent } from './rfxChange/components/xchange-audit-page/xchange-audit-page.component';
 import { XchangeServiceManagementComponent } from './rfxChange/components/xchange-service-management/xchange-service-management.component';
+import { XchangeMainLayoutComponent } from './rfxChange/components/xchange-main-layout/xchange-main-layout.component';
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 
@@ -38,7 +39,7 @@ const routes: Routes = [
   { path: 'error-management', component: XchangeErrorManagementComponent },
   { path: 'audit-page', component: XchangeAuditPageComponent },
   { path: 'service-management', component: XchangeServiceManagementComponent },
-
+  { path: 'main-layout', component: XchangeMainLayoutComponent },
   { path: '**', redirectTo: '/dashboard' }
 ];
 

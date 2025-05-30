@@ -5,7 +5,7 @@
   <div class="page-header">
     <div class="header-title">Pull Records&nbsp;<i class="fa fa-download"></i></div>
     <div class="header-actions">
-      <button class="btn push-btn">
+      <button class="btn push-btn" (click)="openModal()">
         Pull Data Manually <i class="fa fa-download"></i>
       </button>
     </div>
@@ -20,7 +20,7 @@
         </div>
         <div class="filter-actions">
           <button (click)="showFilter = !showFilter"  class="btn filter-btn">
-            Filter <i class="fa fa-sliders"></i>
+            Filter showModal<i class="fa fa-sliders"></i>
           </button>
         </div>
       </div>
@@ -30,7 +30,7 @@
   </div>
   </div>
 
-<!-- 
+
   <div *ngIf="showModal">
-    <app-xchange-vrs-records-management-modal [parentVrsExchangeData]="parentRowData"></app-xchange-vrs-records-management-modal>
-  </div> -->
+    <app-xchange-vrs-pull-records-modal></app-xchange-vrs-pull-records-modal>
+  </div>

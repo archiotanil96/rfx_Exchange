@@ -17,12 +17,13 @@ import { XchangeVrsRecordsManagementFilterComponent } from "../../../module/xcha
 import { XchangeVrsRecordsManagementModalComponent } from "../../../modals/xchange-vrs-records-management-modal/xchange-vrs-records-management-modal.component"
 import { Subscription } from 'rxjs';
 import { EventService } from 'src/app/services/authServices/closeModalService';
+import { XchangeVrsPullRecordsModalComponent } from "../../../modals/xchange-vrs-pull-modal/xchange-vrs-pull-records-modal.component";
 
 
 @Component({
   selector: 'app-xchange-vrs-pull-records',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, XchangeVrsPullRecordsModalComponent],
   templateUrl: './xchange-vrs-pull-records.component.html',
   styleUrl: './xchange-vrs-pull-records.component.css'
 })
@@ -107,7 +108,7 @@ export class XchangeVrsPullRecordsComponent implements OnInit,OnDestroy{
         },
         onCellClicked: (params: any) => {
           if (params.event.target.classList.contains('eye-icon')) {
-            this.openFilterModal(params.data);
+           
           }
         }
        }
@@ -151,12 +152,9 @@ export class XchangeVrsPullRecordsComponent implements OnInit,OnDestroy{
   };
 
 
-  openFilterModal(data: any)
+  openModal()
   {
     this.showModal       = true;
-    this.modalData       = data;
-    this.parentRowData   = this.modalData;
-    console.log("Opening Modal", data, this.showModal);
   }
 
 

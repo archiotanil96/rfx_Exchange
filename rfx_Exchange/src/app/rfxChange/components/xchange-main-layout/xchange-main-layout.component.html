@@ -1,0 +1,218 @@
+<header class="header">
+    <div class="logo"><img src="assets/logo.png" alt="Lets talk tech logo" /></div>
+    <div class="hamburger" (click)="toggleMenu()"><span></span><span></span><span></span></div>
+    <div class="nav-container" [class.open]="menuOpen">
+        <nav class="nav-links">
+            <a href="#">SOLUTIONS</a>
+            <a href="#">RESOURCES</a>
+            <a href="#">PARTNERS</a>
+            <a href="#">COMPANY</a>
+            <a href="#">SUPPORT</a>
+        </nav>
+        <button class="demo-btn">REQUEST A DEMO</button>
+    </div>
+</header>
+
+<div class="dashboard">
+    <div class="demoDashboard"></div>
+    <div class="demoDashboardAttributes">
+        <div class="story-container">
+            <input type="radio" name="slider" id="slide1" checked />
+            <input type="radio" name="slider" id="slide2" />
+            <input type="radio" name="slider" id="slide3" />
+            <input type="radio" name="slider" id="slide4" />
+
+            <div class="slides">
+                <!-- Slide 1 -->
+                <section id="slide1-content" class="story-slide">
+                    <header class="whatsapp-header">
+                        <div class="profile-pic"><i class="fas fa-user-alt"></i></div>
+                        <div class="header-info">
+                            <h2>Vikas Mishra</h2>
+                            <p>Online</p>
+                        </div>
+                        <div class="header-actions">
+                            <button class="icon-btn" aria-label="Search">🔍</button>
+                            <button class="icon-btn" aria-label="More Options">⋮</button>
+                        </div>
+                    </header>
+
+                    <div class="typing-container" #typingContainer>
+                        <div class="message left">Are you a Tally Partner?</div>
+                        <div class="message right">Yes.</div>
+                        <div class="message left">Looking to add more value to your clients while boosting your revenue?</div>
+                        <div class="message right">Yes. What can you do for me that the competitors lack in?</div>
+                        <div class="message left">Let us assist you.</div>
+                        <div class="message left">Let’s Talk Tech is your gateway to seamless IT solution referrals, especially in ERP and CRM systems.</div>
+                        <div class="message left">For every client you refer who adopts an IT solution, you receive exclusive rewards and attractive incentives.</div>
+                        <div class="message left">It’s a simple, hassle-free way to create win-win solutions for you, your clients, and the tech ecosystem.</div>
+                        <div class="message left">Would you like to know more about what we have to offer.</div>
+                        <div class="message right">
+                            <button id="selfClickBtn" (click)="handleClick()">Yes, Please!.</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 2 -->
+                <section id="slide2-content" class="story-slide">
+                    <header class="whatsapp-header">
+                        <div class="profile-pic"><i class="fas fa-user-alt"></i></div>
+                        <div class="header-info">
+                            <h2>Lets Talk Tech</h2>
+                            <p>Why Partner with us?</p>
+                        </div>
+                        <div class="header-actions">
+                            <button class="icon-btn" aria-label="Search">🔍</button>
+                            <button class="icon-btn" aria-label="More Options">⋮</button>
+                        </div>
+                    </header>
+
+                    <div class="typing-container">
+                        <div class="message left">
+                            <div class="card" (click)="onCardClick('Perk 1')">
+                                <div class="level-title">Perk 1</div>
+                                <div class="pixel-art"></div>
+                                <div>Attractive Referral Incentives</div>
+                            </div>
+                        </div>
+                        <div class="message left">Receive generous rewards for every successful IT solution referral.</div>
+                        <div class="message left">
+                            <div class="card" (click)="onCardClick('Perk 2')">
+                                <div class="level-title">Perk 2</div>
+                                <div class="pixel-art"></div>
+                                <div>Trusted IT Expertise</div>
+                            </div>
+                        </div>
+                        <div class="message left">Get expert support you can trust.</div>
+                        <div class="message left">
+                            <div class="card" (click)="onCardClick('Perk 3')">
+                                <div class="level-title">Perk 3</div>
+                                <div class="pixel-art"></div>
+                                <div>Hassle-Free Process</div>
+                            </div>
+                        </div>
+                        <div class="message left">We handle tech discussions while you focus on your business.</div>
+                        <div class="message left">
+                            <div class="card" (click)="onCardClick('Perk 4')">
+                                <div class="level-title">Perk 4</div>
+                                <div class="pixel-art">Hi</div>
+                                <div>Enhance Your Client Relationships</div>
+                            </div>
+                        </div>
+                        <div class="message left">Build stronger, more valuable relationships.</div>
+                        <div class="message right">That's really cool. How can you guys get the work done for me?</div>
+                        <div class="message left">We are glad that you asked us that.</div>
+                    </div>
+                </section>
+
+                <!-- Slide 3 -->
+                <section id="slide3-content" class="story-slide">
+                    <header class="whatsapp-header">
+                        <div class="profile-pic"><i class="fas fa-user-alt"></i></div>
+                        <div class="header-info">
+                            <h2>Lets Talk Tech</h2>
+                            <p>How we work?</p>
+                        </div>
+                        <div class="header-actions">
+                            <button class="icon-btn" aria-label="Search">🔍</button>
+                            <button class="icon-btn" aria-label="More Options">⋮</button>
+                        </div>
+                    </header>
+
+                    <div class="typing-container">
+                        <div class="message left">
+                            <div class="card" (click)="onCardClick('Perk 1')">
+                                <div class="level-title">Perk 1</div>
+                                <div class="pixel-art"></div>
+                                <div>Attractive Referral Incentives</div>
+                            </div>
+                        </div>
+                        <div class="message left">Receive generous rewards for every successful IT solution referral.</div>
+                        <div class="message left">
+                            <div class="card" (click)="onCardClick('Perk 2')">
+                                <div class="level-title">Perk 2</div>
+                                <div class="pixel-art"></div>
+                                <div>Trusted IT Expertise</div>
+                            </div>
+                        </div>
+                        <div class="message left">Get expert support you can trust.</div>
+                        <div class="message left">
+                            <div class="card" (click)="onCardClick('Perk 3')">
+                                <div class="level-title">Perk 3</div>
+                                <div class="pixel-art"></div>
+                                <div>Hassle-Free Process</div>
+                            </div>
+                        </div>
+                        <div class="message left">We handle tech discussions while you focus on your business.</div>
+                        <div class="message left">
+                            <div class="card" (click)="onCardClick('Perk 4')">
+                                <div class="level-title">Perk 4</div>
+                                <div class="pixel-art">Hi</div>
+                                <div>Enhance Your Client Relationships</div>
+                            </div>
+                        </div>
+                        <div class="message left">Build stronger, more valuable relationships.</div>
+                        <div class="message right">That's really cool. How can you guys get the work done for me?</div>
+                        <div class="message left">We are glad that you asked us that.</div>
+                    </div>
+                </section>
+                <!-- Slide 4 -->
+<section id="slide4-content" class="story-slide">
+  <header class="whatsapp-header">
+    <div class="profile-pic"><i class="fas fa-user-alt"></i></div>
+    <div class="header-info">
+      <h2>Let's Talk Tech</h2>
+      <p>Our Partnership Journey</p>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn">🔍</button>
+      <button class="icon-btn">⋮</button>
+    </div>
+  </header>
+
+  <div class="typing-container">
+    <div class="message left">Let us walk you through our seamless partnership process:</div>
+
+    <!-- Radio Buttons to control active step -->
+    <div class="stepper-wrapper">
+      <input type="radio" name="step" id="step1" checked>
+      <input type="radio" name="step" id="step2">
+      <input type="radio" name="step" id="step3">
+
+      <div class="stepper">
+        <label for="step1" class="step">
+          <div class="step-number">1</div>
+          <div class="step-title">Sign Up</div>
+        </label>
+        <label for="step2" class="step">
+          <div class="step-number">2</div>
+          <div class="step-title">Refer Clients</div>
+        </label>
+        <label for="step3" class="step">
+          <div class="step-number">3</div>
+          <div class="step-title">Get Rewarded</div>
+        </label>
+      </div>
+
+      <!-- Step Descriptions -->
+      <div class="step-content">
+        <div class="step-text" id="text1">
+          Create your partner account in just a few clicks. It’s fast and easy!
+        </div>
+        <div class="step-text" id="text2">
+          Submit potential client info. We handle the discussions and demos.
+        </div>
+        <div class="step-text" id="text3">
+          Earn generous incentives for every successful client referral.
+        </div>
+      </div>
+    </div>
+
+    <div class="message left">Start earning by referring your clients today!</div>
+  </div>
+</section>
+
+            </div>
+        </div>
+    </div>
+</div>

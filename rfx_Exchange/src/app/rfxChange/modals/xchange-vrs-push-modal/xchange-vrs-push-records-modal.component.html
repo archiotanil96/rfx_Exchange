@@ -4,6 +4,8 @@
       <h1 class="modal-title">Push Records</h1>
       <button class="close-modal" (click)="closeModal()">×</button>
     </div>
+
+    <!-- Push Initial -->
     <div class="pushInital" #pushInital>
       <div class="three-column-layout">
         <div class="column1">
@@ -11,7 +13,7 @@
             <div class="modal-icon">
               <svg xmlns="http://www.w3.org/2000/svg" class="warning-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.054 0 1.59-1.276.832-2.037L13.414 4.586a1.2 1.2 0 00-1.828 0L3.25 16.963c-.758.76-.222 2.037.832 2.037z" />
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.054 0 1.59-1.276.832-2.037L13.414 4.586a1.2 1.2 0 00-1.828 0L3.25 16.963c-.758.76-.222 2.037.832 2.037z" />
               </svg>
             </div>
           </div>
@@ -27,8 +29,10 @@
           </div>
           <button class="submit-btn" (click)="submitModal()">Push Records</button>
         </div>
+      </div>
     </div>
-    </div>
+
+    <!-- Push Success -->
     <div class="pushSucess" #pushSuccess>
       <div class="three-column-layout">
         <div class="column1">
@@ -55,4 +59,3 @@
     </div>
   </div>
 </div>
-
